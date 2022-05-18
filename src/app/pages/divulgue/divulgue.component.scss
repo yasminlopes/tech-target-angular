@@ -1,0 +1,57 @@
+.banner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: orangered;
+    color: white;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+
+    .banner-info{
+        button{
+            margin-top: 20px;
+            display: block;
+        }
+    }
+
+    .banner-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 150px;
+        }
+    }
+}
+
+.grid-card{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 200px 1fr;
+    padding: 0;
+    gap: 20px;
+    row-gap: 50px;
+
+    div > img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.btn-align{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .btn-login{
+        width: 125px;
+        height: 28px;
+        font-size: 14px;
+        background:orangered;
+        border: none;
+        border-radius:10px;
+        color:#E5E5E5;
+    }
+}

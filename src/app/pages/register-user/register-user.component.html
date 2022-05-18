@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="register">
+        <div class="register-content">
+            <div class="register-painel">
+                <span class="register-text">
+                    Descubra e <span style="color:orangered">faça mais</span>
+                </span>
+                <span class="register-text">
+                    com o seu público<span style="color:orangered">.</span>
+                </span>
+                
+            </div>
+        
+            <form class="form row" [formGroup]="registerUserForm">
+                <div class="row col-md-12 mb-3">
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input add-cursor-pointer" type="radio" formControlName="tipoPessoa" name="tipoPessoa" id="fisica" value="fisica" checked>
+                            <label class="form-check-label add-cursor-pointer" for="fisica">
+                              Pessoa Física
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input add-cursor-pointer" type="radio" formControlName="tipoPessoa" name="tipoPessoa" id="juridica" value="juridica">
+                            <label class="form-check-label add-cursor-pointer" for="juridica">
+                            Pessoa Jurídica
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" formControlName="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('tipoPessoa')?.value == 'fisica'">
+                    <input class="form-control" type="text" formControlName="cpf" placeholder="Digite seu CPF">
+                </div>
+                <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('tipoPessoa')?.value == 'juridica'">
+                    <input class="form-control" type="text" formControlName="cnpj" placeholder="Digite seu CNPJ">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" formControlName="email" placeholder="Digite seu e-mail">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" formControlName="telefone" placeholder="Digite seu telefone">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="password" formControlName="senha" placeholder="Digite sua senha">
+                </div>
+            </form>
+
+            <div class="register-footer">
+                <div class="btn-align">
+                    <button type="btnregister" class="btn-register">Cadastrar</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="register-content-img">
+            <img class="img-size" src="assets/icon.png" alt="">
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,43 @@
+<div class="main-layout">
+    <!-- SideBar -->
+    <div class="sidebar-custom">
+        <div class="sidebar-content">
+            <a href="" routerLink="/main/home"
+                data-bs-toggle="tooltip" 
+                data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                title="Home"
+            >
+                <i class='bx bx-home'></i>
+            </a>
+            <a href="" routerLink="/main/divulgue"
+                data-bs-toggle="tooltip" 
+                data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                title="Divulgue"
+            >
+                <i class='bx bxs-megaphone'></i>
+            </a>
+            <a href="" routerLink="/main/descubra"
+                data-bs-toggle="tooltip" 
+                data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                title="Descubra"
+            >
+                <i class='bx bx-search-alt-2' ></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- NavBar -->
+    <div class="navbar-custom">
+        <app-navbar classCustom="navbar-layout-main"></app-navbar>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="conteudo-custom">
+        <div class="container mt-5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

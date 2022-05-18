@@ -1,0 +1,36 @@
+<div class="my-4">
+    <h4>Monte agora sua Pesquisa de Mercado</h4>
+    <span style="display: block;color: #aaa;">descubra o que seus consumidores/clientes pensam sobre sua empresa/produto</span>
+</div>
+
+<form class="form row" [formGroup]="publicarForm">
+    <div class="col-md-12 mb-3">
+        <label class="form-label">Titulo:</label>
+        <input class="form-control" formControlName="titulo" type="text" placeholder="Digite o titulo do formulário">
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Descrição:</label>
+        <textarea class="form-control" formControlName="descricao" id="descricao" placeholder="Digite a descrição do formulário" rows="3"></textarea>
+    </div>
+
+    <ng-container formArrayName="perguntas">
+        <ng-container *ngFor="let perguntasForm of perguntas.controls; let i = index">
+            <div class="col-md-12">
+                <div class="lesson-form-row" [formGroupName]="i">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <label class="form-label">Ordem:</label>
+                            <input type="text" class="form-control" formControlName="ordem">
+                        </div>
+                        <div class="col-md-11">
+                            <label class="form-label">Pergunta:</label>
+                            <input type="text" class="form-control" formControlName="pergunta">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+    
+    
+</form>

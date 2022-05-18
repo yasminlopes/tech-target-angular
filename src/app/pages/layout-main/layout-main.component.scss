@@ -1,0 +1,45 @@
+.main-layout{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    grid-template-rows: 85px 1fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+    flex-wrap: wrap;
+
+    .sidebar-custom{
+        grid-area: sidebar;
+        background-color: rgb(255, 255, 255);
+        border-right: 1px solid #ccc;
+
+        .sidebar-content{
+            padding: 170px 20px;
+            font-size: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            a i {
+                color: orangered;
+            }
+
+            a i:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+    
+    .navbar-custom{
+        grid-area: header;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    .conteudo-custom{
+        grid-area: main;
+        background-color: rgb(255, 255, 255);
+    }
+
+}

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr";
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+.add-cursor-pointer{
+    cursor: pointer !important;
+}
+
+.h-divider {
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.h-divider .shadow {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 4px;
+    background-color: #ff4500;
+    box-shadow: 0 0.1rem 1rem #ff4500 !important;
+}

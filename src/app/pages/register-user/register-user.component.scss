@@ -1,0 +1,71 @@
+body{
+    padding: 0 !important;
+    margin: 10px 0 !important;
+}
+
+.container{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .logo{
+        display: block;
+        cursor: pointer;
+    }
+
+    .register{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60px;
+        grid-template-columns: 50% 50%;
+        padding: 20px 80px;
+
+        .register-content{
+
+            .register-painel{
+                margin: 50px 0;
+
+                .register-text{
+                    font-size: 32px;
+                    color: black;
+                    display: block;
+                    font-weight: bold;
+                }
+            }
+
+            .register-footer{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-end;
+
+                .btn-align{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .btn-register{
+                        width: 115px;
+                        height: 35px;
+                        background:orangered;
+                        border: none;
+                        border-radius:10px;
+                        color:#E5E5E5;
+                    }
+                }
+            }
+        }
+
+        .register-content-img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+            .img-size{
+                width: 80%;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.grid-card{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 200px 1fr;
+    padding: 0;
+    gap: 20px;
+    row-gap: 50px;
+
+    div > img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.btn-align{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .btn-login{
+        width: 125px;
+        height: 28px;
+        font-size: 14px;
+        background:orangered;
+        border: none;
+        border-radius:10px;
+        color:#E5E5E5;
+    }
+}
+
+.btnColor{
+    background-color: orangered;
+    color: white;
+
+    &:hover{
+        transform: scale(1.1);
+        background-color: rgba(255, 68, 0, 0.8);
+    }
+}
