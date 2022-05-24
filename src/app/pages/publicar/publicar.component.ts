@@ -17,6 +17,7 @@ export class PublicarComponent implements OnInit {
 
   ngOnInit(): void {
     this.iniciarForm();
+    this.addPergunta();
   }
 
   iniciarForm(){

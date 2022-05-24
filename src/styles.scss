@@ -21,3 +21,8 @@
     background-color: #ff4500;
     box-shadow: 0 0.1rem 1rem #ff4500 !important;
 }
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";

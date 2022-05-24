@@ -1,0 +1,35 @@
+.combo-pergunta{
+    display: flex;
+    gap: 10px;
+}
+
+.pergunta-size{
+    width: calc(100% - 40px);
+}
+
+.btn-login{
+    width: 230px;
+    height: 35px;
+    background:orangered;
+    border: none;
+    border-radius:10px;
+    color:#E5E5E5;
+}
+
+.acoes-custom-size{
+    display: flex;
+    align-items: end;
+
+    .acoes-custom-icon{
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i{
+            font-size: 22px;
+            background: #dc3545;
+            color: white;
+        }
+    }
+}

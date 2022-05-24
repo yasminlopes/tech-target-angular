@@ -33,28 +33,90 @@
                     </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="nome" placeholder="Digite seu nome">
-                </div>
-                <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('tipoPessoa')?.value == 'fisica'">
-                    <input class="form-control" type="text" formControlName="cpf" placeholder="Digite seu CPF">
-                </div>
-                <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('tipoPessoa')?.value == 'juridica'">
-                    <input class="form-control" type="text" formControlName="cnpj" placeholder="Digite seu CNPJ">
+                    <input class="form-control" type="text" formControlName="user_name" placeholder="User Name">
                 </div>
                 <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="email" placeholder="Digite seu e-mail">
+                    <input class="form-control" type="text" formControlName="name" placeholder="Nome">
                 </div>
                 <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="telefone" placeholder="Digite seu telefone">
+                    <input class="form-control" type="text" formControlName="last_name" placeholder="Sobrenome">
                 </div>
                 <div class="col-md-12 mb-3">
-                    <input class="form-control" type="password" formControlName="senha" placeholder="Digite sua senha">
+                    <ng-select [items]="cidades"
+                        bindLabel="city_name"
+                        bindValue="city_id"
+                        placeholder="Cidade"
+                        formControlName="user_city">
+                    </ng-select>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" formControlName="user_address" placeholder="Endereço">
+                </div>
+                <ng-container *ngIf="registerUserForm.get('tipoPessoa')?.value == 'fisica'">
+                    <div class="col-md-12 mb-3">
+                        <input class="form-control" type="text" formControlName="cpf" placeholder="CPF">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <input class="form-control" type="text" formControlName="profession" placeholder="Profissão">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <ng-select [items]="genders"
+                            bindLabel="gender_name"
+                            bindValue="gender_id"
+                            placeholder="Sexo"
+                            formControlName="gender_id">
+                        </ng-select>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <ng-select [items]="statusCivil"
+                            bindLabel="civil_status_name"
+                            bindValue="civil_status_id"
+                            placeholder="Estado Civil"
+                            formControlName="civil_status_id">
+                        </ng-select>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <input type="text"
+                            placeholder="Data de Nascimento"
+                            class="form-control"
+                            formControlName="birth_date"
+                            bsDatepicker
+                        >
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="registerUserForm.get('tipoPessoa')?.value == 'juridica'">
+                    <div class="col-md-12 mb-3">
+                        <input class="form-control" type="text" formControlName="cnpj" placeholder="CNPJ">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <input class="form-control" type="text" formControlName="corporate_name" placeholder="Nome da Corporação">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <input class="form-control" type="text" formControlName="fancy_name" placeholder="Nome Fantasia">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <ng-select [items]="segments"
+                            bindLabel="segment_title"
+                            bindValue="segment_id"
+                            placeholder="Segmento"
+                            formControlName="segments">
+                        </ng-select>
+                    </div>
+                </ng-container>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" formControlName="user_email" placeholder="E-mail">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" formControlName="user_phone" placeholder="Telefone">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="password" formControlName="user_password" placeholder="Senha">
                 </div>
             </form>
 
             <div class="register-footer">
                 <div class="btn-align">
-                    <button type="btnregister" class="btn-register">Cadastrar</button>
+                    <button type="btnregister" class="btn-register" (click)="registerUser()">Cadastrar</button>
                 </div>
             </div>
 

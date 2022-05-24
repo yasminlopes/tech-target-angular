@@ -29,23 +29,23 @@ export class LoginComponent implements OnInit {
 
   iniciarForm(){
     this.loginForm = this.formBuilder.group({
-      email: ['', [ Validators.required, Validators.email ]],
-      senha: ['', [ Validators.required ]]
+      user_email: ['', [ Validators.required, Validators.email ]],
+      user_password: ['', [ Validators.required ]]
     })
   }
 
   login(){
-    this.http.post<any>(`${environment.api}/auth`, this.loginForm.value).subscribe( ( res ): any => {
-      console.log(res)
+    this.http.post<any>(`${environment.api}/login/user/`, this.loginForm.value).subscribe( ( res ): any => {
       this.userLoggedService.user = res.user[0]
+      console.log(res)
       if(res.status === 200) {
         localStorage.setItem('user-sf', JSON.stringify(res.user[0]))
         this.toastr.success(res.mensagem);
 
-        return this.router.navigate(['/safecommunity/home'])
+        return this.router.navigate(['/main/home'])
       }
 
-      this.toastr.error(res.mensagem);
+      //this.toastr.error(res.mensagem);
     })
   }
 
