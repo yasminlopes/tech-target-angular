@@ -33,15 +33,20 @@
                     </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="user_name" placeholder="User Name">
-                </div>
-                <div class="col-md-12 mb-3">
                     <input class="form-control" type="text" formControlName="name" placeholder="Nome">
                 </div>
                 <div class="col-md-12 mb-3">
                     <input class="form-control" type="text" formControlName="last_name" placeholder="Sobrenome">
                 </div>
                 <div class="col-md-12 mb-3">
+                    <ng-select [items]="estados"
+                        bindLabel="state_name"
+                        bindValue="acronym"
+                        placeholder="Estado"
+                        formControlName="user_state">
+                    </ng-select>
+                </div>
+                <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('user_state')?.value">
                     <ng-select [items]="cidades"
                         bindLabel="city_name"
                         bindValue="city_id"
@@ -116,7 +121,13 @@
 
             <div class="register-footer">
                 <div class="btn-align">
-                    <button type="btnregister" class="btn-register" (click)="registerUser()">Cadastrar</button>
+                    <button 
+                        type="btnregister" 
+                        class="btn-register"
+                        [ngClass]="registerUserForm.invalid ? 'disabled-button' : ''" 
+                        [disabled]="registerUserForm.invalid" 
+                        (click)="registerUser()"
+                    >Cadastrar</button>
                 </div>
             </div>
 

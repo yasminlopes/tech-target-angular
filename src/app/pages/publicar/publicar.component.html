@@ -6,27 +6,35 @@
 <form class="form row" [formGroup]="publicarForm">
     <div class="col-md-12 mb-3">
         <label class="form-label">Titulo:</label>
-        <input class="form-control" formControlName="titulo" type="text" placeholder="Informe o titulo do formulário">
+        <input class="form-control" formControlName="title" type="text" placeholder="Informe o titulo do formulário">
     </div>
     <div class="col-md-12 mb-3">
         <label class="form-label">Descrição:</label>
-        <textarea class="form-control" formControlName="descricao" id="descricao" placeholder="Informe a descrição do formulário" rows="3"></textarea>
+        <textarea class="form-control" formControlName="description" id="descricao" placeholder="Informe a descrição do formulário" rows="3"></textarea>
     </div>
 
-    <ng-container formArrayName="perguntas">
-        <ng-container *ngFor="let perguntasForm of perguntas.controls; let i = index">
+    <ng-container formArrayName="questions">
+        <ng-container *ngFor="let questionsForm of questions.controls; let i = index">
             <div class="col-md-12 mb-3">
                 <div class="lesson-form-row" [formGroupName]="i">
                     <div class="row">
                         <div class="col-md-1">
                             <label class="form-label">Ordem:</label>
-                            <input type="text" class="form-control" formControlName="ordem">
+                            <input type="number" class="form-control" formControlName="question_order">
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-2">
+                            <label class="form-label">Tipo:</label>
+                            <ng-select [items]="TIPOS"
+                                bindLabel="descricao"
+                                bindValue="id"
+                                formControlName="question_type_id">
+                            </ng-select>
+                        </div>
+                        <div class="col-md-9">
                             <label class="form-label">Pergunta:</label>
                             <div class="combo-pergunta">
                                 <div class="pergunta-size">
-                                    <input type="text" class="form-control" formControlName="pergunta">
+                                    <input type="text" class="form-control" formControlName="question_title">
                                 </div>
                                 <div class="acoes-custom-size">
                                     <div class="acoes-custom-icon">
@@ -42,11 +50,11 @@
     </ng-container>
 
     <div class="d-flex justify-content-center mb-3">
-        <button class="btn-login" type="button" (click)="addPergunta()">Adicionar nova pergunta</button>
+        <button class="btn-login" type="button" (click)="addQuestion()">Adicionar nova pergunta</button>
     </div>
 
     <div class="d-flex gap-3">
-        <button class="btn btn-success" type="submit">Salvar</button>
+        <button class="btn btn-success" type="submit" (click)="createForm()">Salvar</button>
         <button class="btn btn-danger" type="button" routerLink="/main/divulgue">Cancelar</button>
     </div>
     

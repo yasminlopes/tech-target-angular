@@ -11,8 +11,8 @@ export class UserLoggedService {
     return this.user.id_usuario;
   }
 
-  public get isAdmin(): boolean{
-    return this.user.administrator == 1;
+  public get isCompany(): boolean{
+    return this.user.company || false;
   }
 
   constructor() { }

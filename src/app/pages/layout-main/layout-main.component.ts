@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserLoggedService } from 'src/app/shared/services/user-logged/user-logged.service';
 
 @Component({
   selector: 'app-layout-main',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutMainComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public userLoggedService: UserLoggedService
+  ) { }
 
   ngOnInit(): void {
   }

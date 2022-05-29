@@ -2,7 +2,7 @@
     <!-- SideBar -->
     <div class="sidebar-custom">
         <div class="sidebar-content">
-            <a href="" routerLink="/main/home"
+            <a *ngIf="!userLoggedService?.isCompany" href="" routerLink="/main/home"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-custom-class="custom-tooltip"
@@ -10,7 +10,7 @@
             >
                 <i class='bx bx-home'></i>
             </a>
-            <a href="" routerLink="/main/divulgue"
+            <a *ngIf="userLoggedService?.isCompany" href="" routerLink="/main/divulgue"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-custom-class="custom-tooltip"
@@ -18,13 +18,21 @@
             >
                 <i class='bx bxs-megaphone'></i>
             </a>
-            <a href="" routerLink="/main/descubra"
+            <a *ngIf="!userLoggedService?.isCompany" href="" routerLink="/main/descubra"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-custom-class="custom-tooltip"
                 title="Descubra"
             >
                 <i class='bx bx-search-alt-2' ></i>
+            </a>
+            <a *ngIf="userLoggedService?.isCompany" href="" routerLink="/main/grafico"
+                data-bs-toggle="tooltip" 
+                data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                title="Gráficos"
+            >
+                <i class='bx bxs-dashboard'></i>
             </a>
         </div>
     </div>

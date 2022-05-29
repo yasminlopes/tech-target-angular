@@ -13,14 +13,14 @@
                 
             </div>
         
-            <form class="form row" [formGroup]="loginForm" >
+            <form class="form row" [formGroup]="loginForm">
                 <div class="col-md-12 mb-3">
                     <label class="form-label">E-mail:</label>
                     <input class="form-control" formControlName="user_email" type="text">
                 </div>
                 <div class="col-md-12">
                     <label class="form-label">Senha:</label>
-                    <input class="form-control" formControlName="user_password" type="password">
+                    <input class="form-control" formControlName="user_password" type="password" (keyup.enter)="login()">
                 </div>
             </form>
 

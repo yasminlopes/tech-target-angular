@@ -1,5 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { TIPOS } from 'src/app/constantes/tipos.const';
+import { UserLoggedService } from 'src/app/shared/services/user-logged/user-logged.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-publicar',
@@ -10,39 +16,58 @@ export class PublicarComponent implements OnInit {
 
   ARRAY_QTD_PERGUNTAS = Array.from({length: 10}, (v, k) => k+1);
   publicarForm: FormGroup;
+  TIPOS = TIPOS
 
   constructor(
-    private formBuilder: FormBuilder
+    private http: HttpClient,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private toastr: ToastrService,
+    public userLoggedService: UserLoggedService
   ) { }
 
   ngOnInit(): void {
     this.iniciarForm();
-    this.addPergunta();
+    this.addQuestion();
   }
 
   iniciarForm(){
     this.publicarForm = this.formBuilder.group({
-      titulo: [null, [ Validators.required ]],
-      descricao: ['', [ Validators.required ]],
-      perguntas: this.formBuilder.array([])
+      title: [null, [ Validators.required ]],
+      description: ['', [ Validators.required ]],
+      questions: this.formBuilder.array([])
     })
   }
 
-  get perguntas() {
-    return this.publicarForm.controls["perguntas"] as FormArray;
+  get questions() {
+    return this.publicarForm.controls["questions"] as FormArray;
   }
 
-  addPergunta() {
-    const perguntasForm = this.formBuilder.group({
-        ordem: ['', Validators.required],
-        pergunta: ['', Validators.required]
+  addQuestion() {
+    const questionsForm = this.formBuilder.group({
+      question_order: [null, Validators.required],
+      question_type_id: [null, Validators.required],
+      question_title: ['', Validators.required]
     });
   
-    this.perguntas.push(perguntasForm);
+    this.questions.push(questionsForm);
   }
 
-  deletePergunta(index: number) {
-    this.perguntas.removeAt(index);
-}
+  deleteQuestion(index: number) {
+    this.questions.removeAt(index);
+  }
+
+  createForm(){
+    console.log(this.publicarForm.value)
+    this.http.post<any>(`${environment.api}/form/create/${this.userLoggedService.user.user_cnpj_id}`, this.publicarForm.value).subscribe( res => {
+      console.log(res)
+      if(res) {
+        this.toastr.success('Formulário publicado com sucesso!');
+        this.router.navigate(['/main/divulgue'])
+      }else{
+        this.toastr.error('Erro ao criar formulário!');
+      }
+    })
+  }
 
 }

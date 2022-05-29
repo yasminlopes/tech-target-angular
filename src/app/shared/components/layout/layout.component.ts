@@ -10,7 +10,7 @@ import { UserLoggedService } from '../../services/user-logged/user-logged.servic
 export class LayoutComponent implements OnInit {
 
   userName: string = 'Não Indentificado';
-  admin:boolean = false;
+  isCompany:boolean = false;
 
   constructor(
     private userLoggedService: UserLoggedService,
@@ -23,7 +23,7 @@ export class LayoutComponent implements OnInit {
     if(user) this.userLoggedService.user = JSON.parse(user);
     
     this.userName = this.userLoggedService.user.nome;
-    this.admin = this.userLoggedService.isAdmin;
+    this.isCompany = this.userLoggedService.isCompany;
   }
 
   disconnect(){

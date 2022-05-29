@@ -36,16 +36,16 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.http.post<any>(`${environment.api}/login/user/`, this.loginForm.value).subscribe( ( res ): any => {
-      this.userLoggedService.user = res.user[0]
-      console.log(res)
-      if(res.status === 200) {
-        localStorage.setItem('user-sf', JSON.stringify(res.user[0]))
-        this.toastr.success(res.mensagem);
+      const status = res[0].response_status
+      this.userLoggedService.user = res[1]
+      if(status === 200) {
+        localStorage.setItem('user-tt', JSON.stringify(res[1]))
+        this.toastr.success('Logado com sucesso!');
 
-        return this.router.navigate(['/main/home'])
+        return this.userLoggedService.isCompany ? this.router.navigate(['/main/divulgue']) : this.router.navigate(['/main/home'])
       }
 
-      //this.toastr.error(res.mensagem);
+      this.toastr.error('Login inválido!');
     })
   }
 

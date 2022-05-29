@@ -3,10 +3,11 @@
       <a class="navbar-brand" href="#">
         <img src="assets/logo.png" alt="">
       </a>
+      <div *ngIf="router.url !== '/register-user' && router.url !== '/login'">Bem vindo(a), {{userName}}</div>
       <div>
         <button *ngIf="router.url === '/login'" routerLink="/register-user" type="btnlogin" class="btn-login">Cadastrar-se</button>
         <button *ngIf="router.url === '/register-user'" routerLink="/login" type="btnlogin" class="btn-login">Login</button>
-        <button *ngIf="router.url !== '/register-user' && router.url !== '/login' "routerLink="/login" type="btnlogin" class="btn-login">Sair</button>
+        <button *ngIf="router.url !== '/register-user' && router.url !== '/login' " routerLink="/login" type="btnlogin" class="btn-login">Sair</button>
       </div>
     </div>
 </nav>
