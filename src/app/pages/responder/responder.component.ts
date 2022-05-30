@@ -81,7 +81,7 @@ export class ResponderComponent implements OnInit {
       console.log(res)
       if(res) {
         this.toastr.success('Formulário respondido com sucesso!');
-        this.router.navigate(['/main/divulgue'])
+        this.router.navigate(['/main/home'])
       }else{
         this.toastr.error('Erro ao responder formulário!');
       }
