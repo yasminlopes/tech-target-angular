@@ -20,30 +20,15 @@
 </div>
 
 <div class="row my-5">
-    <div class="col-md-6 row">
+    <div class="col-md-6 row" *ngFor="let form of forms">
         <div class="grid-card">
             <div>
-                <img src="assets/nttdata.jpg" class="img-thumbnail"alt="...">
+                <img src="assets/question.jpg" class="img-thumbnail"alt="...">
             </div>
             <div>
-                    <h5 class="card-title">NTT DATA</h5>
-                    <small style="color: #aaa;">Tecnologia</small>
-                    <p class="card-text">Formulário de satisfação do cliente referente aos seus serviços de consultoria.</p>
-                    <div class="btn-align">
-                        <button type="btnlogin" class="btn-login">Editar</button>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 row">
-        <div class="grid-card">
-            <div>
-                <img src="assets/insta.webp" class="img-thumbnail"alt="...">
-            </div>
-            <div>
-                    <h5 class="card-title">Instagram</h5>
-                    <small style="color: #aaa;">Tecnologia</small>
-                    <p class="card-text">Formulário de pesquisa referente a sua usabilidade.</p>
+                    <h5 class="card-title">{{form.form_title}}</h5>
+                    <small style="color: #aaa;">{{form.segment}}</small>
+                    <p class="card-text">{{form.form_description}}</p>
                     <div class="btn-align">
                         <button type="btnlogin" class="btn-login">Editar</button>
                     </div>

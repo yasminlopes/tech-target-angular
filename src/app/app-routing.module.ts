@@ -9,10 +9,11 @@ import { LayoutMainComponent } from './pages/layout-main/layout-main.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PublicarComponent } from './pages/publicar/publicar.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
+import { ResponderComponent } from './pages/responder/responder.component';
 
 const routes: Routes = [
   { path: '', component: LadingPageComponent },
-  { path: 'home', component: LadingPageComponent },
+  { path: 'lading-page', component: LadingPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register-user', component: RegisterUserComponent },
   { 
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'descubra', component: DescubraComponent },
       { path: 'publicar', component: PublicarComponent },
       { path: 'grafico', component: DashboardComponent },
+      { path: 'responder/:id', component: ResponderComponent },
     ]
   },
 ];

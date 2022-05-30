@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  destaques: any[] = []
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
+    this.getDestaques()
+  }
+
+  getDestaques(){
+    this.http.get<any>(`${environment.api}/form/listForms/allForms`).subscribe( res => {
+      console.log(res)
+      res.shift()
+      this.destaques = res.slice(0, 4)
+    })
   }
 
 }

@@ -14,6 +14,7 @@ import { PublicarComponent } from './publicar/publicar.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ResponderComponent } from './responder/responder.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
          DivulgueComponent,
          DescubraComponent,
          PublicarComponent,
-         DashboardComponent
+         DashboardComponent,
+         ResponderComponent
   ],
     imports: [
         CommonModule,

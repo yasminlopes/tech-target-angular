@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { UserLoggedService } from 'src/app/shared/services/user-logged/user-logged.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-divulgue',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DivulgueComponent implements OnInit {
 
-  constructor() { }
+  forms:any[] = []
+
+  constructor(
+    private http: HttpClient,
+    public userLoggedService: UserLoggedService
+  ) { }
 
   ngOnInit(): void {
+    this.getMyForms()
   }
 
+  getMyForms(){
+    this.http.get<any>(`${environment.api}/form/listForms/perUser/${this.userLoggedService.user.user_cnpj_id}`).subscribe( res => {
+      console.log(res)
+      res.shift()
+      this.forms = res
+    })
+  }
 }

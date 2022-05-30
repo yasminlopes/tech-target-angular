@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-descubra',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DescubraComponent implements OnInit {
 
-  constructor() { }
+  forms: any[] = []
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
+    this.getForms()
+  }
+
+  getForms(){
+    this.http.get<any>(`${environment.api}/form/listForms/allForms`).subscribe( res => {
+      console.log(res)
+      res.shift()
+      this.forms = res
+    })
   }
 
 }

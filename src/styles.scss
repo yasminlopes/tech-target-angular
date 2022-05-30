@@ -3,6 +3,11 @@
 
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
+.disabled-button{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 .add-cursor-pointer{
     cursor: pointer !important;
 }

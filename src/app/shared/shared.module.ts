@@ -4,12 +4,14 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselMainComponent } from './components/carousel-main/carousel-main.component';
+import { RadiosComponent } from './components/radios/radios.component';
 
 @NgModule({
     declarations: [
         LayoutComponent,
         NavbarComponent,
-        CarouselMainComponent
+        CarouselMainComponent,
+        RadiosComponent
     ],
     imports: [
         CommonModule,

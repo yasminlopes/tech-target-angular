@@ -1,0 +1,81 @@
+<div class="my-4">
+    <h4>Pesquisa de Mercado</h4>
+    <span style="display: block;color: #aaa;">responda atentamente as perguntas abaixo sobre a empresa/produto</span>
+</div>
+
+<form class="form row" [formGroup]="responderForm" *ngIf="!loading">
+
+    <ng-container formArrayName="answers">
+        <ng-container *ngFor="let answerForm of answers.controls; let i = index">
+            <div class="col-md-12 mb-3">
+                <div class="lesson-form-row" [formGroupName]="i">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="form-label">
+                                {{answerForm.get('question_order')?.value}}. {{answerForm.get('question_title')?.value}}
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <div *ngIf="answerForm.get('question_type_title')?.value == 'Numérico'">
+                                <div class="form-check" *ngFor="let num of NUMERICO">
+                                    <input class="form-check-input" 
+                                        type="radio" 
+                                        formControlName="answer_field_{{answerForm.get('question_order')?.value}}" 
+                                        name="answer_field_{{answerForm.get('question_order')?.value}}" 
+                                        [value]="num.value" 
+                                        [id]="num.name+'-'+i"
+                                    >
+                                    <label class="form-check-label add-cursor-pointer" [for]="num.name+'-'+i">
+                                      {{num.value}}
+                                    </label>
+                                  </div>
+                            </div>
+                            
+                            <div *ngIf="answerForm.get('question_type_title')?.value == 'Quantitativa'">
+                                <div class="form-check" *ngFor="let quant of QUANTITATIVA">
+                                    <input class="form-check-input" 
+                                        type="radio" 
+                                        formControlName="answer_field_{{answerForm.get('question_order')?.value}}" 
+                                        [value]="quant.value" 
+                                        name="answer_field_{{answerForm.get('question_order')?.value}}" 
+                                        [id]="quant.name+'-'+i"
+                                    >
+                                    <label class="form-check-label add-cursor-pointer" [for]="quant.name+'-'+i">
+                                        {{quant.value}}
+                                    </label>
+                                  </div>
+                            </div>
+                            
+                            <div *ngIf="answerForm.get('question_type_title')?.value == 'Qualitativa'">
+                                <div class="form-check" *ngFor="let qual of QUALITATIVA">
+                                    <input class="form-check-input" 
+                                        type="radio" 
+                                        formControlName="answer_field_{{answerForm.get('question_order')?.value}}" 
+                                        [value]="qual.value" 
+                                        name="answer_field_{{answerForm.get('question_order')?.value}}" 
+                                        [id]="qual.name+'-'+i"
+                                    >
+                                    <label class="form-check-label add-cursor-pointer" [for]="qual.name+'-'+i">
+                                        {{qual.value}}
+                                    </label>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+
+    <div class="d-flex gap-3 mb-5">
+        <button class="btn btn-success" 
+            type="submit" 
+            [ngClass]="responderForm.invalid ? 'disabled-button' : ''" 
+            [disabled]="responderForm.invalid"  
+            (click)="responder()"
+        >Responder</button>
+        <button class="btn btn-danger" type="button" routerLink="/main/descubra">Cancelar</button>
+    </div>
+    
+    
+</form>
