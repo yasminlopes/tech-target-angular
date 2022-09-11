@@ -1,7 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+@import './assets/styles/componentes.scss';
+@import './assets/styles/paletacores.scss';
+@import './assets/styles/tipografia.scss';
+
 @import "~ngx-toastr/toastr";
 
 @import "~@ng-select/ng-select/themes/default.theme.css";
+
+body {
+    margin: 0px;
+    font-family: "Raleway", sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  ul,
+  p {
+    margin: 0px;
+  }
+  
+span{
+  color: $cor-vermelho;
+}
+  ul {
+    padding: 0px;
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
 
 .disabled-button{
     opacity: 0.7;
@@ -23,8 +60,8 @@
     border-radius: 50%;
     overflow: hidden;
     height: 4px;
-    background-color: #ff4500;
-    box-shadow: 0 0.1rem 1rem #ff4500 !important;
+    background-color: $cor-vermelho;
+    box-shadow: 0 0.1rem 1rem $cor-vermelho !important;
 }
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";

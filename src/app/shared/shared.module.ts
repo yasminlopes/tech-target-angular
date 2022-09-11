@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './components/layout/layout.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselMainComponent } from './components/carousel-main/carousel-main.component';
 import { RadiosComponent } from './components/radios/radios.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
     declarations: [
-        LayoutComponent,
         NavbarComponent,
         CarouselMainComponent,
-        RadiosComponent
+        RadiosComponent,
     ],
     imports: [
         CommonModule,
         RouterModule
     ],
     exports: [
-        LayoutComponent,
         NavbarComponent,
-        CarouselMainComponent
+        CarouselMainComponent,
     ]
 })
 export class SharedModule { }

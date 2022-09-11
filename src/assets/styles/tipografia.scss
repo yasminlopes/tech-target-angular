@@ -1,0 +1,44 @@
+@import './paletacores.scss';
+.texto-grande {
+  font-size: 4rem;
+  line-height: 1.125;
+  font-weight: 700;
+}
+
+.texto-medio {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.texto-pequeno {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.texto-h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.cor-branco {
+  color: $cor-branco;
+}
+
+.cor-cinza {
+  color: $cor-cinza;
+}
+
+.cor-vermelho {
+  color: $cor-vermelho;
+}
+
+.cor-preta {
+  color: $cor-preta;
+}
+
+.cor-preto-claro {
+  color: $cor-preto-claro;
+}

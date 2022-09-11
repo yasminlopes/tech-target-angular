@@ -15,6 +15,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResponderComponent } from './responder/responder.component';
+import { FooterComponent } from '../shared/components/footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,9 @@ import { ResponderComponent } from './responder/responder.component';
          DescubraComponent,
          PublicarComponent,
          DashboardComponent,
-         ResponderComponent
+         ResponderComponent,
+         FooterComponent
+
   ],
     imports: [
         CommonModule,
