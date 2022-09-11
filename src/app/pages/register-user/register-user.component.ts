@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class RegisterUserComponent implements OnInit {
 
-  registerUserForm: FormGroup;
+  registerUserForm: UntypedFormGroup;
   genders: any = []
   statusCivil: any = []
   segments: any = []
@@ -21,7 +21,7 @@ export class RegisterUserComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private toastr: ToastrService
   ) { }

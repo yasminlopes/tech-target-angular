@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NUMERICO, QUALITATIVA, QUANTITATIVA } from 'src/app/constantes/tipos.const';
@@ -17,7 +17,7 @@ export class ResponderComponent implements OnInit {
   public questions: any[] = [];
   public loading = true;
   public id: string | null;
-  public responderForm: FormGroup;
+  public responderForm: UntypedFormGroup;
   public NUMERICO: any[] = NUMERICO;
   public QUANTITATIVA: any[] = QUANTITATIVA;
   public QUALITATIVA: any[] = QUALITATIVA;
@@ -25,7 +25,7 @@ export class ResponderComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private toastr: ToastrService,
     public userLoggedService: UserLoggedService
@@ -56,7 +56,7 @@ export class ResponderComponent implements OnInit {
   }
 
   get answers() {
-    return this.responderForm.controls["answers"] as FormArray;
+    return this.responderForm.controls["answers"] as UntypedFormArray;
   }
 
   addQuestion(question: any) {

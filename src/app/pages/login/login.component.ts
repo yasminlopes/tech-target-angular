@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserLoggedService } from 'src/app/shared/services/user-logged/user-logged.service';
@@ -13,11 +13,11 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup
+  loginForm: UntypedFormGroup
 
   constructor(
     private http: HttpClient,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private userLoggedService: UserLoggedService,
     private toastr: ToastrService

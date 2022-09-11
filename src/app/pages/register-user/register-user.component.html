@@ -1,140 +1,125 @@
-<app-navbar></app-navbar>
-
-<div class="container">
-    <div class="register">
-        <div class="register-content">
-            <div class="register-painel">
-                <span class="register-text">
-                    Descubra e <span style="color:orangered">faça mais</span>
-                </span>
-                <span class="register-text">
-                    com o seu público<span style="color:orangered">.</span>
-                </span>
-                
-            </div>
-        
-            <form class="form row" [formGroup]="registerUserForm">
-                <div class="row col-md-12 mb-3">
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input add-cursor-pointer" type="radio" formControlName="tipoPessoa" name="tipoPessoa" id="fisica" value="fisica" checked>
-                            <label class="form-check-label add-cursor-pointer" for="fisica">
-                              Pessoa Física
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input add-cursor-pointer" type="radio" formControlName="tipoPessoa" name="tipoPessoa" id="juridica" value="juridica">
-                            <label class="form-check-label add-cursor-pointer" for="juridica">
-                            Pessoa Jurídica
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="name" placeholder="Nome">
-                </div>
-                <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="last_name" placeholder="Sobrenome">
-                </div>
-                <div class="col-md-12 mb-3">
-                    <ng-select [items]="estados"
-                        bindLabel="state_name"
-                        bindValue="acronym"
-                        placeholder="Estado"
-                        formControlName="user_state">
-                    </ng-select>
-                </div>
-                <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('user_state')?.value">
-                    <ng-select [items]="cidades"
-                        bindLabel="city_name"
-                        bindValue="city_id"
-                        placeholder="Cidade"
-                        formControlName="user_city">
-                    </ng-select>
-                </div>
-                <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="user_address" placeholder="Endereço">
-                </div>
-                <ng-container *ngIf="registerUserForm.get('tipoPessoa')?.value == 'fisica'">
-                    <div class="col-md-12 mb-3">
-                        <input class="form-control" type="text" formControlName="cpf" placeholder="CPF">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <input class="form-control" type="text" formControlName="profession" placeholder="Profissão">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <ng-select [items]="genders"
-                            bindLabel="gender_name"
-                            bindValue="gender_id"
-                            placeholder="Sexo"
-                            formControlName="gender_id">
-                        </ng-select>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <ng-select [items]="statusCivil"
-                            bindLabel="civil_status_name"
-                            bindValue="civil_status_id"
-                            placeholder="Estado Civil"
-                            formControlName="civil_status_id">
-                        </ng-select>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <input type="text"
-                            placeholder="Data de Nascimento"
-                            class="form-control"
-                            formControlName="birth_date"
-                            bsDatepicker
-                        >
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="registerUserForm.get('tipoPessoa')?.value == 'juridica'">
-                    <div class="col-md-12 mb-3">
-                        <input class="form-control" type="text" formControlName="cnpj" placeholder="CNPJ">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <input class="form-control" type="text" formControlName="corporate_name" placeholder="Nome da Corporação">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <input class="form-control" type="text" formControlName="fancy_name" placeholder="Nome Fantasia">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <ng-select [items]="segments"
-                            bindLabel="segment_title"
-                            bindValue="segment_id"
-                            placeholder="Segmento"
-                            formControlName="segments">
-                        </ng-select>
-                    </div>
-                </ng-container>
-                <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="user_email" placeholder="E-mail">
-                </div>
-                <div class="col-md-12 mb-3">
-                    <input class="form-control" type="text" formControlName="user_phone" placeholder="Telefone">
-                </div>
-                <div class="col-md-12 mb-3">
-                    <input class="form-control" type="password" formControlName="user_password" placeholder="Senha">
-                </div>
-            </form>
-
-            <div class="register-footer">
-                <div class="btn-align">
-                    <button 
-                        type="btnregister" 
-                        class="btn-register"
-                        [ngClass]="registerUserForm.invalid ? 'disabled-button' : ''" 
-                        [disabled]="registerUserForm.invalid" 
-                        (click)="registerUser()"
-                    >Cadastrar</button>
-                </div>
-            </div>
-
-        </div>
-        <div class="register-content-img">
-            <img class="img-size" src="assets/icon.png" alt="">
-        </div>
+<app-header></app-header>
+<main>
+  <br />
+  <div class="titulo-bg">
+    <div class="titulo container">
+      <p class="texto-h2 cor-cinza">CADASTRAR-SE</p>
+      <h1 class="texto-grande cor-branco">
+        Descubra e <br /><span class="cor-vermelho">faça mais</span><br />
+      </h1>
     </div>
+  </div>
+  <br />
+  <!-- cpf ou cnpj-->
+  <form class="cadastro container" action="./">
+    <div class="cadastro-tipo">
+      <h2 class="texto-pequeno cor-cinza">Pessoa Física ou Jurídica?</h2>
+      <!---->
+      <br /><br />
+      <!-- INPUT-->
+                <input class="form-check-input add-cursor-pointer"
+                type="radio" formControlName="tipoPessoa"
+                name="tipoPessoa"
+                id="fisica"
+                value="fisica"
+                checked>
+                <label class="form-check-label add-cursor-pointer" for="fisica">
+                  Pessoa Física
+                </label>
+                
+                <input class="form-check-input add-cursor-pointer" type="radio" formControlName="tipoPessoa" name="tipoPessoa" id="juridica" value="juridica">
+                <label class="form-check-label add-cursor-pointer" for="juridica">
+                Pessoa Jurídica
+                </label>
+            </div>
     
-</div>
+    <!-- FORM-->
+    <div class="cadastro-dados form">
+      <h2 class="texto-pequeno cor-preto-claro col-2">dados pessoais</h2>
+      <div>
+        <label for="nome">Nome Completo</label>
+        <input class="form-control" type="text"
+        formControlName="name" />
+      </div>
+
+      <div>
+        <label for="profissao">Profissão</label>
+        <input class="form-control" type="text"
+        formControlName="profession" />
+      </div>
+
+      <div class="">
+        <label for="cpf">CPF</label>
+        <input class="form-control" type="text"
+        formControlName="cpf"
+        maxlength="11"
+        mask="000.000.000-00"
+        placeholder="000.000.000-00" />
+      </div>
+
+      <div class="">
+        <label for="data">Data de Nascimento</label>
+        <input class="form-control" type="date" formControlName="birth_date" />
+      </div>
+
+      <div class="">
+        <label for="email">E-mail</label>
+        <input class="form-control"
+        type="email"
+        formControlName="user_email"  />
+      </div>
+
+      <div class="">
+        <label for="senha">Senha</label>
+        <input class="form-control"
+        type="password"
+        formControlName="user_password" />
+      </div>
+      <!-- FIM DE DADOS PESSOAIS-->
+      <!-- <div class="col-md-12 mb-3">
+        <ng-select [items]="estados"
+            bindLabel="state_name"
+            bindValue="acronym"
+            placeholder="Estado"
+            formControlName="user_state">
+        </ng-select>
+    </div>
+    <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('user_state')?.value">
+        <ng-select [items]="cidades"
+            bindLabel="city_name"
+            bindValue="city_id"
+            placeholder="Cidade"
+            formControlName="user_city">
+        </ng-select>
+    </div> -->
+
+      <h2 class="texto-pequeno cor-preto-claro col-2">endereço</h2>
+      <div>
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" name="cep" />
+      </div>
+      <div>
+        <label for="numero">Número</label>
+        <input type="text" id="numero" name="numero" />
+      </div>
+      <div>
+        <label for="logradouro">Logradouro</label>
+        <input type="text" id="logradouro" name="logradouro" />
+      </div>
+      <div>
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" name="bairro" />
+      </div>
+      <div>
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade" />
+      </div>
+      <div>
+        <label for="estado">Estado</label>
+        <input type="text" id="estado" name="estado" />
+      </div>
+      <button class="botao">Cadastrar</button>
+    </div>
+  </form>
+</main>
+<app-footer></app-footer>

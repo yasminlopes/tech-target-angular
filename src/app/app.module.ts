@@ -9,7 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     HttpClientModule,
     ToastrModule.forRoot(),
     NgSelectModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

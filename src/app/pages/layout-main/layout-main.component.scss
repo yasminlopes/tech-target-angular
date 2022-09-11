@@ -1,3 +1,7 @@
+@import '/src/assets/styles/paletacores.scss';
+@import '/src/assets/styles/componentes.scss';
+@import '/src/assets/styles/tipografia.scss';
+
 .main-layout{
     height: 100vh;
     display: grid;
@@ -23,7 +27,7 @@
             gap: 30px;
 
             a i {
-                color: orangered;
+                color: $cor-vermelho;
             }
 
             a i:hover {

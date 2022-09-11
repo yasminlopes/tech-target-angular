@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselMainComponent } from './components/carousel-main/carousel-main.component';
 import { RadiosComponent } from './components/radios/radios.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
     declarations: [

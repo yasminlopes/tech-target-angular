@@ -2,8 +2,20 @@
 @import '/src/assets/styles/componentes.scss';
 @import '/src/assets/styles/tipografia.scss';
 
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .footer-bg {
-  background-color: var(--cor-4);
+  background-color: $cor-preta;
 }
 
 .footer {
@@ -25,14 +37,14 @@
   display: block;
   max-width: 360px;
   height: 2px;
-  background-color: var(--cor-5);
+  background-color: $cor-preto-claro;
   margin-top: 16px;
 }
 .footer li {
   margin-bottom: 16px;
 }
 .footer a:hover {
-  color: var(--cor-1);
+  color: $cor-branco;
 }
 
 .footer-redes {

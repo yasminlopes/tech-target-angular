@@ -1,46 +1,50 @@
-<app-navbar></app-navbar>
-
-<div class="container">
-    <div class="login">
-        <div class="login-content">
-            <div class="login-painel">
-                <span class="login-text">
-                    Bem vindo
-                </span>
-                <span class="login-text">
-                    de volta<strong style="color: black">!</strong>
-                </span>
-                
-            </div>
-        
-            <form class="form row" [formGroup]="loginForm">
-                <div class="col-md-12 mb-3">
-                    <label class="form-label">E-mail:</label>
-                    <input class="form-control" formControlName="user_email" type="text">
-                </div>
-                <div class="col-md-12">
-                    <label class="form-label">Senha:</label>
-                    <input class="form-control" formControlName="user_password" type="password" (keyup.enter)="login()">
-                </div>
-            </form>
-
-            <div class="login-footer">
-                <div class="footer-1" routerLink="/register-user">
-                    <span id="cadastrar">Cadastrar-se</span> 
-                </div>
-
-                <div class="footer-2">
-                    <div class="btn-align">
-                        <button (click)="login()" type="button" class="btn-login">Login</button>
-                    </div>
-                    <span id="esqueci">Esqueci a senha</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="login-content-img">
-            <img class="img-size" src="assets/icon.png" alt="">
-        </div>
+<app-header></app-header>
+<main>
+  <div class="titulo-bg">
+    <div class="titulo container">
+      <p class="texto-pequeno cor-cinza">FAÇA MAIS COM SEU PÚBLICO</p>
+      <h1 class="texto-grande cor-branco">Bem vindo<BR /> de volta!</h1>
     </div>
-    
-</div>
+  </div>
+  <br />
+  <!--title-->
+  <!--IMAGEM PRIMEIRO-->
+  <div class="login container">
+    <div class="login-imagem">
+      <img src="assets/pictures/login-picture.jpg" />
+    </div>
+    <!--END IMAGEM-->
+    <!--LOGIN DADOS-->
+    <div class="login-form" >
+      <form class="form" [formGroup]="loginForm">
+        <h2 class="texto-pequeno cor-preto-claro col-2">Faça Login</h2>
+
+        <div class="col-2">
+          <label class="form-label">E-mail</label>
+          <input
+            class="form-control"
+            formControlName="user_email"
+            type="text"
+          />
+        </div>
+
+        <div class="col-2">
+          <label class="form-label">Senha</label>
+          <input
+            class="form-control"
+            formControlName="user_password"
+            type="password"
+            (keyup.enter)="login()"
+          />
+        </div>
+        <button (click)="login()" class="botao col-2">Login</button>
+        <a href="">Esqueceu a senha?</a>
+      </form>
+      <br />
+      <h2 class="texto-pequeno cor-preto-claro col-2">Cadastre-se</h2>
+      <br />
+      <button class="botao-cadastro"  routerLink="/register-user">Cadastro</button>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>

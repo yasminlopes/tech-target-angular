@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TIPOS } from 'src/app/constantes/tipos.const';
@@ -15,12 +15,12 @@ import { environment } from 'src/environments/environment';
 export class PublicarComponent implements OnInit {
 
   ARRAY_QTD_PERGUNTAS = Array.from({length: 10}, (v, k) => k+1);
-  publicarForm: FormGroup;
+  publicarForm: UntypedFormGroup;
   TIPOS = TIPOS
 
   constructor(
     private http: HttpClient,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private toastr: ToastrService,
     public userLoggedService: UserLoggedService
@@ -40,7 +40,7 @@ export class PublicarComponent implements OnInit {
   }
 
   get questions() {
-    return this.publicarForm.controls["questions"] as FormArray;
+    return this.publicarForm.controls["questions"] as UntypedFormArray;
   }
 
   addQuestion() {

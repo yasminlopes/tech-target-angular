@@ -16,6 +16,10 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResponderComponent } from './responder/responder.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+// import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+// export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
     declarations: [
@@ -29,7 +33,8 @@ import { FooterComponent } from '../shared/components/footer/footer.component';
          PublicarComponent,
          DashboardComponent,
          ResponderComponent,
-         FooterComponent
+         FooterComponent,
+         HeaderComponent,
 
   ],
     imports: [
