@@ -17,44 +17,55 @@
       <!---->
       <br /><br />
       <!-- INPUT-->
-                <input class="form-check-input add-cursor-pointer"
-                type="radio" formControlName="tipoPessoa"
-                name="tipoPessoa"
-                id="fisica"
-                value="fisica"
-                checked>
-                <label class="form-check-label add-cursor-pointer" for="fisica">
-                  Pessoa Física
-                </label>
-                
-                <input class="form-check-input add-cursor-pointer" type="radio" formControlName="tipoPessoa" name="tipoPessoa" id="juridica" value="juridica">
-                <label class="form-check-label add-cursor-pointer" for="juridica">
-                Pessoa Jurídica
-                </label>
-            </div>
-    
+      <input
+        class="form-check-input add-cursor-pointer"
+        type="radio"
+        formControlName="tipoPessoa"
+        name="tipoPessoa"
+        id="fisica"
+        value="fisica"
+        checked
+      />
+      <label class="form-check-label add-cursor-pointer" for="fisica">
+        Pessoa Física
+      </label>
+
+      <input
+        class="form-check-input add-cursor-pointer"
+        type="radio"
+        formControlName="tipoPessoa"
+        name="tipoPessoa"
+        id="juridica"
+        value="juridica"
+      />
+      <label class="form-check-label add-cursor-pointer" for="juridica">
+        Pessoa Jurídica
+      </label>
+    </div>
+
     <!-- FORM-->
     <div class="cadastro-dados form">
-      <h2 class="texto-pequeno cor-preto-claro col-2">dados pessoais</h2>
+      <h2 class="texto-pequeno cor-primaria-03 col-2">dados pessoais</h2>
       <div>
         <label for="nome">Nome Completo</label>
-        <input class="form-control" type="text"
-        formControlName="name" />
+        <input class="form-control" type="text" formControlName="name" />
       </div>
 
       <div>
         <label for="profissao">Profissão</label>
-        <input class="form-control" type="text"
-        formControlName="profession" />
+        <input class="form-control" type="text" formControlName="profession" />
       </div>
 
       <div class="">
         <label for="cpf">CPF</label>
-        <input class="form-control" type="text"
-        formControlName="cpf"
-        maxlength="11"
-        mask="000.000.000-00"
-        placeholder="000.000.000-00" />
+        <input
+          class="form-control"
+          type="text"
+          formControlName="cpf"
+          maxlength="11"
+          mask="000.000.000-00"
+          placeholder="000.000.000-00"
+        />
       </div>
 
       <div class="">
@@ -64,16 +75,16 @@
 
       <div class="">
         <label for="email">E-mail</label>
-        <input class="form-control"
-        type="email"
-        formControlName="user_email"  />
+        <input class="form-control" type="email" formControlName="user_email" />
       </div>
 
       <div class="">
         <label for="senha">Senha</label>
-        <input class="form-control"
-        type="password"
-        formControlName="user_password" />
+        <input
+          class="form-control"
+          type="password"
+          formControlName="user_password"
+        />
       </div>
       <!-- FIM DE DADOS PESSOAIS-->
       <!-- <div class="col-md-12 mb-3">
@@ -93,7 +104,7 @@
         </ng-select>
     </div> -->
 
-      <h2 class="texto-pequeno cor-preto-claro col-2">endereço</h2>
+      <h2 class="texto-pequeno cor-primaria-03 col-2">endereço</h2>
       <div>
         <label for="cep">CEP</label>
         <input type="text" id="cep" name="cep" />
@@ -112,11 +123,21 @@
       </div>
       <div>
         <label for="cidade">Cidade</label>
-        <input type="text" id="cidade" name="cidade" />
+        <input
+          formControlName="user_city"
+          type="text"
+          id="cidade"
+          name="cidade"
+        />
       </div>
       <div>
         <label for="estado">Estado</label>
-        <input type="text" id="estado" name="estado" />
+        <input
+          formControlName="user_state"
+          type="text"
+          id="estado"
+          name="estado"
+        />
       </div>
       <button class="botao">Cadastrar</button>
     </div>

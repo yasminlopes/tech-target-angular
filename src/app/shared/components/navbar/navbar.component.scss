@@ -1,3 +1,7 @@
+@import '/src/assets/styles/paletacores.scss';
+@import '/src/assets/styles/componentes.scss';
+@import '/src/assets/styles/tipografia.scss';
+
 .nav-custom{
     padding: 10px 80px;
 }
@@ -9,7 +13,7 @@
 .btn-login{
     width: 115px;
     height: 35px;
-    background:orangered;
+    background:$cor-primaria-01;
     border: none;
     border-radius:10px;
     color:#E5E5E5;

@@ -1,3 +1,16 @@
+@import '/src/assets/styles/paletacores.scss';
+@import '/src/assets/styles/componentes.scss';
+@import '/src/assets/styles/tipografia.scss';
+
+h4::before{
+    content: "";
+            display: inline-block;
+            background-color: $cor-secundaria-01;
+            height: 20px;
+            width: 5px;
+            margin-right: 8px;
+}
+
 .combo-pergunta{
     display: flex;
     gap: 10px;
@@ -10,7 +23,7 @@
 .btn-login{
     width: 230px;
     height: 35px;
-    background:orangered;
+    background:$cor-primaria-01;
     border: none;
     border-radius:10px;
     color:#E5E5E5;

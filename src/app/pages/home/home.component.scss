@@ -1,3 +1,7 @@
+@import '/src/assets/styles/paletacores.scss';
+@import '/src/assets/styles/componentes.scss';
+@import '/src/assets/styles/tipografia.scss';
+
 .grid-card{
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -21,7 +25,7 @@
         width: 125px;
         height: 28px;
         font-size: 14px;
-        background:orangered;
+        background: $cor-primaria-02;
         border: none;
         border-radius:10px;
         color:#E5E5E5;

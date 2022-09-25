@@ -1,3 +1,16 @@
+@import '/src/assets/styles/paletacores.scss';
+@import '/src/assets/styles/componentes.scss';
+@import '/src/assets/styles/tipografia.scss';
+
+h4::before{
+    content: "";
+            display: inline-block;
+            background-color: $cor-secundaria-01;
+            height: 20px;
+            width: 5px;
+            margin-right: 8px;
+}
+
 .grid-card{
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -21,7 +34,7 @@
         width: 125px;
         height: 28px;
         font-size: 14px;
-        background:orangered;
+        background: $cor-primaria-01;
         border: none;
         border-radius:10px;
         color:#E5E5E5;
@@ -29,11 +42,11 @@
 }
 
 .btnColor{
-    background-color: orangered;
+    background-color: $cor-primaria-01;
     color: white;
 
     &:hover{
         transform: scale(1.1);
-        background-color: rgba(255, 68, 0, 0.8);
+        background-color: $cor-primaria-01;
     }
 }

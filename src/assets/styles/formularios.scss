@@ -6,7 +6,7 @@
 
 .form label {
   display: block;
-  font: 600 1rem/1.5 "Raleway", sans-serif;
+  font: 600 1rem/1.5 'Sora', sans-serif;
   margin-bottom: 4px;
 }
 
@@ -19,12 +19,12 @@
 .form input[type="password"],
 .form input[type="phone"],
 .form textarea {
-  font: 400 1rem/1.5 "Raleway", sans-serif;
+  font: 400 1rem/1.5 'Sora', sans-serif;
   background: $cor-branco;
   border: 1px solid $cor-cinza;
   padding: 12px;
   border-radius: 5px;
-  width: 100%;
+  width: 30rem;
   box-sizing: border-box;
 }
 
@@ -34,7 +34,7 @@
 .form input[type="phone"]:focus,
 .form textarea:focus {
   outline: none;
-  border-color: $cor-vermelho;
+  border-color: $cor-secundaria-01;
   background: $cor-branco;
 }
 

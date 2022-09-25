@@ -9,14 +9,14 @@ a{
     color: $cor-branco;
   }
 *{    
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Sora', sans-serif;
 }
 main{  
-  background: $cor-preto-claro;
+  background: $cor-primaria-03;
 }
 
 #cadastro {
-    background: linear-gradient(var($cor-preto-claro) 600px, var($cor-preta) 0px);
+    background: linear-gradient(var($cor-primaria-03) 600px, var($cor-primaria-01) 0px);
   }
   
   .cadastro {
@@ -37,7 +37,7 @@ main{
     display: inline-block;
     width: 4px;
     height: 8px;
-    background-color: $cor-vermelho;
+    background-color: $cor-secundaria-01;
     position: absolute;
     left: -12px;
   }
@@ -51,7 +51,7 @@ main{
   .cadastro-tipo {
     border-radius: 5px 0 0 5px;
     gap: 20px;
-    background: $cor-preta;
+    background: $cor-primaria-01;
   }
   .cadastro-tipo label {
     background: $cor-cinza;
@@ -79,7 +79,7 @@ main{
   }
   .form label {
     display: block;
-    font: 600 1rem/1.5 "Raleway", sans-serif;
+    font: 600 1rem/1.5 'Sora', sans-serif;
     margin-bottom: 4px;
   }
   
@@ -93,7 +93,7 @@ main{
   .form input[type="date"],
   .form input[type="phone"],
   .form textarea {
-    font: 400 1rem/1.5 "Raleway", sans-serif;
+    font: 400 1rem/1.5 'Sora', sans-serif;
     background-color: #f7f7f7;
     border: 1px solid #f4f4f4;
     padding: 12px;
@@ -109,9 +109,9 @@ main{
   .form input[type="phone"]:focus,
   .form textarea:focus {
     outline: none;
-    border-color: $cor-vermelho;
+    border-color: $cor-secundaria-01;
     background: $cor-branco;
-    box-shadow: 0 0 0 2px #ff8888;
+    box-shadow: 0 0 0 2px #44b0e2;
   }
   
   @media (max-width: 1200px) {
@@ -127,7 +127,7 @@ main{
     }
     .cadastro-tipo {
       border-radius: 5px 5px 0 0;
-      background: $cor-preta;
+      background: $cor-primaria-01;
     }
     .cadastro-dados {
       border-radius: 0 0 5px 5px;

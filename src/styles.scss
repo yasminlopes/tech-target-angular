@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
 
 @import './assets/styles/componentes.scss';
 @import './assets/styles/paletacores.scss';
@@ -9,9 +8,11 @@
 
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
+*{
+  font-family: 'Sora', sans-serif;
+}
 body {
     margin: 0px;
-    font-family: "Raleway", sans-serif;
   }
   
   h1,
@@ -24,7 +25,7 @@ body {
   }
   
 span{
-  color: $cor-vermelho;
+  color: $cor-secundaria-01;
 }
   ul {
     padding: 0px;
@@ -50,19 +51,18 @@ span{
 }
 
 .h-divider {
-    margin: auto;
-    margin-top: 50px;
-    width: 100%;
-    position: relative;
+  margin: auto;
+  margin-top: 50px;
+  width: 100%;
+  position: relative;
 }
 
 .h-divider .shadow {
-    border-radius: 50%;
-    overflow: hidden;
-    height: 4px;
-    background-color: $cor-vermelho;
-    box-shadow: 0 0.1rem 1rem $cor-vermelho !important;
+  overflow: hidden;
+  height: 1px;
+  background-color: $neutro-n20;
 }
+
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
 

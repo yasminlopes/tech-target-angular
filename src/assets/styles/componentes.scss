@@ -10,7 +10,7 @@
 .link {
   display: inline-block;
   color: $cor-branco;
-  font: 700 1.5rem/1.5 "Raleway", sans-serif;
+  font: 700 1.5rem/1.5 'Sora', sans-serif;
   text-transform: uppercase;
 }
 .link::after {
@@ -18,12 +18,13 @@
   display: block;
   width: 100%;
   height: 4px;
-  background-color: $cor-vermelho;
+  background-color: $cor-secundaria-01;
 }
 .link:hover {
   color: var(--cor-2);
 }
 .botao {
+  width: fit-content;
   padding: 16px 32px;
   background: $cor-botao;
   border-radius: 4px;
@@ -37,7 +38,7 @@
   cursor: pointer;
 }
 .botao:hover {
-  background: $cor-preta;
+  background: $cor-primaria-01;
   color: $cor-cinza;
 }
 

@@ -1,18 +1,33 @@
+@import '/src/assets/styles/paletacores.scss';
+@import '/src/assets/styles/componentes.scss';
+@import '/src/assets/styles/tipografia.scss';
+
+h4::before{
+    content: "";
+            display: inline-block;
+            background-color: $cor-secundaria-01;
+            height: 20px;
+            width: 5px;
+            margin-right: 8px;
+}
 .banner{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: orangered;
+    background-color: $cor-secundaria-01;
     color: white;
     width: 100%;
-    height: 200px;
-    padding: 20px;
+    height: 100%;
+    padding: 50px;
     border-radius: 5px;
     flex-wrap: wrap;
 
-    .banner-info{
+    &__info{
         button{
             margin-top: 20px;
             display: block;
+        }
+        &__img{
+            padding-bottom: 50px;
         }
     }
 
@@ -49,7 +64,7 @@
         width: 125px;
         height: 28px;
         font-size: 14px;
-        background:orangered;
+        background:$cor-primaria-01;
         border: none;
         border-radius:10px;
         color:#E5E5E5;

@@ -1,51 +1,78 @@
 <div class="main-layout">
-    <!-- SideBar -->
-    <div class="sidebar-custom">
-        <div class="sidebar-content">
-            <a *ngIf="!userLoggedService?.isCompany" href="" routerLink="/main/home"
-                data-bs-toggle="tooltip" 
-                data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip"
-                title="Home"
-            >
-                <i class='bx bx-home'></i>
-            </a>
-            <a *ngIf="userLoggedService?.isCompany" href="" routerLink="/main/divulgue"
-                data-bs-toggle="tooltip" 
-                data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip"
-                title="Divulgue"
-            >
-                <i class='bx bxs-megaphone'></i>
-            </a>
-            <a *ngIf="!userLoggedService?.isCompany" href="" routerLink="/main/descubra"
-                data-bs-toggle="tooltip" 
-                data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip"
-                title="Descubra"
-            >
-                <i class='bx bx-search-alt-2' ></i>
-            </a>
-            <a *ngIf="userLoggedService?.isCompany" href="" routerLink="/main/grafico"
-                data-bs-toggle="tooltip" 
-                data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip"
-                title="Gráficos"
-            >
-                <i class='bx bxs-dashboard'></i>
-            </a>
-        </div>
-    </div>
+  <!-- SideBar -->
+  <div class="sidebar-custom">
+    <div class="sidebar-content">
+      <a
+        *ngIf="!userLoggedService?.isCompany"
+        href=""
+        routerLink="/main/home"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        data-bs-custom-class="custom-tooltip"
+        title="Home"
+      >
+        <i class="bx bx-home"></i>
+      </a>
+      <a
+        *ngIf="!userLoggedService?.isCompany"
+        href=""
+        routerLink="/main/divulgue"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        data-bs-custom-class="custom-tooltip"
+        title="Home"
+      >
+      <i class='bx bx-news'></i>
+      </a>
+      
+      <a
+        *ngIf="!userLoggedService?.isCompany"
+        href=""
+        routerLink="/main/descubra"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        data-bs-custom-class="custom-tooltip"
+        title="Descubra"
+      >
+        <i class="bx bx-search-alt-2"></i>
+      </a>
+     
+      <a
+      *ngIf="!userLoggedService?.isCompany"
+      href=""
+      routerLink="/main/grafico"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      data-bs-custom-class="custom-tooltip"
+      title="Gráficos"
+    >
+      <i class='bx bx-line-chart' ></i>
+    </a>
 
-    <!-- NavBar -->
-    <div class="navbar-custom">
-        <app-navbar classCustom="navbar-layout-main"></app-navbar>
+    <a
+    *ngIf="!userLoggedService?.isCompany"
+    href=""
+    routerLink="/main/chat"
+    data-bs-toggle="tooltip"
+    data-bs-placement="top"
+    data-bs-custom-class="custom-tooltip"
+    title="Chat"
+  >
+    <i class="bx bx-message-square-dots"></i>
+  </a>
+      
     </div>
+  </div>
 
-    <!-- Conteúdo -->
-    <div class="conteudo-custom">
-        <div class="container mt-5">
-            <router-outlet></router-outlet>
-        </div>
+  <!-- NavBar -->
+  <div class="navbar-custom">
+    <app-navbar classCustom="navbar-layout-main"></app-navbar>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="conteudo-custom">
+    <div class="container mt-5">
+      <router-outlet></router-outlet>
     </div>
+  </div>
 </div>
