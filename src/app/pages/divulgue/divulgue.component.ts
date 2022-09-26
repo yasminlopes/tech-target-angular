@@ -22,7 +22,7 @@ export class DivulgueComponent implements OnInit {
   }
 
   getMyForms(){
-    this.http.get<any>(`${environment.api}/form/listForms/perUser/${this.userLoggedService.user.user_cnpj_id}`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/v1/questions/perForm?form/${this.userLoggedService.user.user_cnpj_id}`).subscribe( res => {
       console.log(res)
       res.shift()
       this.forms = res
