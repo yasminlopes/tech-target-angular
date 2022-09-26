@@ -14,13 +14,13 @@
         <i class="bx bx-home"></i>
       </a>
       <a
-        *ngIf="!userLoggedService?.isCompany"
+        *ngIf="userLoggedService?.isCompany"
         href=""
         routerLink="/main/divulgue"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        title="Home"
+        title="Divulgue"
       >
       <i class='bx bx-news'></i>
       </a>
@@ -38,7 +38,7 @@
       </a>
      
       <a
-      *ngIf="!userLoggedService?.isCompany"
+      *ngIf="userLoggedService?.isCompany"
       href=""
       routerLink="/main/grafico"
       data-bs-toggle="tooltip"
@@ -50,7 +50,6 @@
     </a>
 
     <a
-    *ngIf="!userLoggedService?.isCompany"
     href=""
     routerLink="/main/chat"
     data-bs-toggle="tooltip"
