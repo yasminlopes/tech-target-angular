@@ -40,7 +40,7 @@ export class ResponderComponent implements OnInit {
 
   async getQuestions(){
     return new Promise((resolve, reject) => {
-      this.http.get<any>(`${environment.api}/v1/questions/perForm?form=${this.id}`).subscribe( res => {
+      this.http.get<any>(`${environment.api}/form/listQuestions/perForm/${this.id}`).subscribe( res => {
         console.log(res)
         res.shift()
         this.questions = res
@@ -77,7 +77,7 @@ export class ResponderComponent implements OnInit {
 
   responder(){
     console.log(this.responderForm.value)
-    this.http.post<any>(`${environment.api}/v1/answers/${this.userLoggedService.user.user_cpf_id}`, this.responderForm.value).subscribe( res => {
+    this.http.post<any>(`${environment.api}/form/insert/answers/${this.userLoggedService.user.user_cpf_id}`, this.responderForm.value).subscribe( res => {
       console.log(res)
       if(res) {
         this.toastr.success('Formulário respondido com sucesso!');

@@ -87,7 +87,7 @@ export class RegisterUserComponent implements OnInit {
   }
 
   getState(){
-    this.http.get<any>(`${environment.api}/v1/country/states`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/user/listStates`).subscribe( res => {
       console.log(res)
       res.shift()
       this.estados = res
@@ -95,7 +95,7 @@ export class RegisterUserComponent implements OnInit {
   }
 
   getCity(valor: string){
-    this.http.get<any>(`${environment.api}/v1/country/cities?state=${valor}`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/user/listCity/perState/${valor}`).subscribe( res => {
       this.registerUserForm.get('user_city')?.patchValue(null)
       res.shift()
       this.cidades = res
@@ -103,21 +103,21 @@ export class RegisterUserComponent implements OnInit {
   }
 
   getGender(){
-    this.http.get<any>(`${environment.api}/v1/genders/`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/user/listAll/gender`).subscribe( res => {
       res.shift()
       this.genders = res
     })
   }
 
   getStatusCivil(){
-    this.http.get<any>(`${environment.api}/v1/civilStatus/`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/user/listAll/civil`).subscribe( res => {
       res.shift()
       this.statusCivil = res
     })
   }
 
   getSegments(){
-    this.http.get<any>(`${environment.api}/v1/segments/`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/user/listAll/segment`).subscribe( res => {
       res.shift()
       this.segments = res
     })
