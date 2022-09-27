@@ -35,6 +35,10 @@ export class RegisterUserComponent implements OnInit {
     this.iniciarForm();
 
     this.listenState()
+
+    this.registerUserForm.valueChanges.subscribe(x => {
+      console.log(x)
+    })
   }
 
   listenState(){
@@ -57,8 +61,8 @@ export class RegisterUserComponent implements OnInit {
       user_city: [null, [ Validators.required ]],
       user_address: [''],
       birth_date: [''],
-      civil_status_id: [null],
-      gender_id: [null],
+      civil_status: [null],
+      gender: [null],
       profession: [''],
       user_email: ['', [ Validators.required, Validators.email ]],
       user_phone: ['', [ Validators.required ]],
@@ -71,9 +75,9 @@ export class RegisterUserComponent implements OnInit {
       birth_date: this.convertDate(this.registerUserForm.get('birth_date')?.value)
     }) 
 
-    const rota =  this.registerUserForm.get('tipoPessoa')?.value == 'fisica' ? '/user/create/cpf' : '/user/create/cnpj';
+    const type =  this.registerUserForm.get('tipoPessoa')?.value == 'fisica' ? 'cpf' : 'cnpj';
     
-    this.http.post<any>(`${environment.api + rota}`, {
+    this.http.post<any>(`${environment.api}/users/commonUsers/?user_type=${type}`, {
       user_name: this.registerUserForm.get('name')?.value + ' ' + this.registerUserForm.get('last_name')?.value,
       ...this.registerUserForm.value
     }).subscribe( res => {
@@ -87,38 +91,34 @@ export class RegisterUserComponent implements OnInit {
   }
 
   getState(){
-    this.http.get<any>(`${environment.api}/user/listStates`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/country/states`).subscribe( res => {
       console.log(res)
-      res.shift()
       this.estados = res
     })
   }
 
   getCity(valor: string){
-    this.http.get<any>(`${environment.api}/user/listCity/perState/${valor}`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/country/cities?state=${valor}`).subscribe( res => {
       this.registerUserForm.get('user_city')?.patchValue(null)
-      res.shift()
       this.cidades = res
+      console.log(this.cidades)
     })
   }
 
   getGender(){
-    this.http.get<any>(`${environment.api}/user/listAll/gender`).subscribe( res => {
-      res.shift()
+    this.http.get<any>(`${environment.api}/genders`).subscribe( res => {
       this.genders = res
     })
   }
 
   getStatusCivil(){
-    this.http.get<any>(`${environment.api}/user/listAll/civil`).subscribe( res => {
-      res.shift()
+    this.http.get<any>(`${environment.api}/civilStatus`).subscribe( res => {
       this.statusCivil = res
     })
   }
 
   getSegments(){
-    this.http.get<any>(`${environment.api}/user/listAll/segment`).subscribe( res => {
-      res.shift()
+    this.http.get<any>(`${environment.api}/segments`).subscribe( res => {
       this.segments = res
     })
   }

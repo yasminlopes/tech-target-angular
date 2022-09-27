@@ -1,0 +1,29 @@
+<h3 class="mb-3 d-flex align-items-center"> 
+    <i class="bx bx-message-square-dots icon-ajust"></i>
+    CHAT
+</h3>
+
+<div class="container-main-chat">
+    <div class="chat-choose">
+
+    </div>
+    <div class="chat-msg">
+        <h3>Bruno Coorporação (Empresárial) </h3>
+
+        <div class="chat-container">
+            <div class="conteudo-msg">
+                <div *ngFor="let message of messages" class="block-chat" [ngClass]="message.me == 2 ? 'me' : 'to'">
+                    {{message.msg}}
+                </div>
+            </div>
+            <div class="footer">
+                <div class="input-group">
+                    <input type="text" class="form-control" (keyup.enter)="sendMessage()" [formControl]="inputMsg" aria-label="Digite sua mensagem...">
+                    <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" (click)="sendMessage()">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

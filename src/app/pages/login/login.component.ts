@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.http.post<any>(`${environment.api}/login/user/`, this.loginForm.value).subscribe( ( res ): any => {
+    this.http.post<any>(`${environment.api}/auth/`, this.loginForm.value).subscribe( ( res ): any => {
       const status = res[0].response_status
       this.userLoggedService.user = res[1]
       if(status === 200) {

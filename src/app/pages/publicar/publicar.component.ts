@@ -59,7 +59,12 @@ export class PublicarComponent implements OnInit {
 
   createForm(){
     console.log(this.publicarForm.value)
-    this.http.post<any>(`${environment.api}/form/create/${this.userLoggedService.user.user_cnpj_id}`, this.publicarForm.value).subscribe( res => {
+    this.http.post<any>(`${environment.api}/form/create`, 
+      {
+        user_cnpj: this.userLoggedService.user.user_cnpj_id,
+        ...this.publicarForm.value
+      }
+    ).subscribe( res => {
       console.log(res)
       if(res) {
         this.toastr.success('Formulário publicado com sucesso!');

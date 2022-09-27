@@ -49,7 +49,7 @@
                 <div class="col-md-12 mb-3" *ngIf="registerUserForm.get('user_state')?.value">
                     <ng-select [items]="cidades"
                         bindLabel="city_name"
-                        bindValue="city_id"
+                        bindValue="id"
                         placeholder="Cidade"
                         formControlName="user_city">
                     </ng-select>
@@ -66,18 +66,18 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <ng-select [items]="genders"
-                            bindLabel="gender_name"
-                            bindValue="gender_id"
+                            bindLabel="name"
+                            bindValue="id"
                             placeholder="Sexo"
-                            formControlName="gender_id">
+                            formControlName="gender">
                         </ng-select>
                     </div>
                     <div class="col-md-12 mb-3">
                         <ng-select [items]="statusCivil"
-                            bindLabel="civil_status_name"
-                            bindValue="civil_status_id"
+                            bindLabel="status_name"
+                            bindValue="id"
                             placeholder="Estado Civil"
-                            formControlName="civil_status_id">
+                            formControlName="civil_status">
                         </ng-select>
                     </div>
                     <div class="col-md-12 mb-3">
@@ -101,8 +101,8 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <ng-select [items]="segments"
-                            bindLabel="segment_title"
-                            bindValue="segment_id"
+                            bindLabel="name"
+                            bindValue="id"
                             placeholder="Segmento"
                             formControlName="segments">
                         </ng-select>

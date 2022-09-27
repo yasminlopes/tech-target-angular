@@ -18,6 +18,8 @@ import { ResponderComponent } from './responder/responder.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ContatoComponent } from './contato/contato.component';
+import { ChatComponent } from './chat/chat.component';
+import { DashPerQuestionComponent } from './dash-per-question/dash-per-question.component';
 // import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -37,6 +39,8 @@ import { ContatoComponent } from './contato/contato.component';
          FooterComponent,
          HeaderComponent,
          ContatoComponent,
+         ChatComponent,
+         DashPerQuestionComponent,
 
   ],
     imports: [
