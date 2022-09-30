@@ -36,10 +36,11 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.http.post<any>(`${environment.api}/auth/`, this.loginForm.value).subscribe( ( res ): any => {
-      const status = res[0].response_status
-      this.userLoggedService.user = res[1]
+      console.log(res)
+      const status = res?.response_status || 200
+      this.userLoggedService.user = res
       if(status === 200) {
-        localStorage.setItem('user-tt', JSON.stringify(res[1]))
+        localStorage.setItem('user-tt', JSON.stringify(res))
         this.toastr.success('Logado com sucesso!');
 
         return this.userLoggedService.isCompany ? this.router.navigate(['/main/divulgue']) : this.router.navigate(['/main/home'])

@@ -59,9 +59,10 @@ export class PublicarComponent implements OnInit {
 
   createForm(){
     console.log(this.publicarForm.value)
-    this.http.post<any>(`${environment.api}/form/create`, 
+    console.log(this.userLoggedService.idUsuario)
+    this.http.post<any>(`${environment.api}/forms`, 
       {
-        user_cnpj: this.userLoggedService.user.user_cnpj_id,
+        user_cnpj: this.userLoggedService.idUsuario,
         ...this.publicarForm.value
       }
     ).subscribe( res => {

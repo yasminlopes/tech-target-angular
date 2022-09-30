@@ -1,9 +1,9 @@
 import { Tipos } from "../model/tipos.model";
 
 export const TIPOS: Tipos[] = [
-    { id: 1, descricao: 'Numérico' },
-    { id: 2, descricao: 'Quantitativa' },
-    { id: 3, descricao: 'Qualitativa' }
+    { id: 1, descricao: 'Numérico', disabled: false},
+    { id: 2, descricao: 'Quantitativa', disabled: true },
+    { id: 3, descricao: 'Qualitativa', disabled: true }
 ]
 
 export const NUMERICO = [

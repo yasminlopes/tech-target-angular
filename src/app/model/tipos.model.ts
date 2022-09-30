@@ -1,4 +1,5 @@
 export interface Tipos {
     id: number,
-    descricao: string
+    descricao: string,
+    disabled: boolean
 }

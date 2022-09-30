@@ -8,11 +8,11 @@ export class UserLoggedService {
   public user: any = {};
 
   public get idUsuario(){
-    return this.user.id_usuario;
+    return this.user.user.id;
   }
 
   public get isCompany(): boolean{
-    return this.user.company || false;
+    return this.user.isCompany || false;
   }
 
   constructor() { }

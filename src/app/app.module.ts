@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -30,7 +31,8 @@ const maskConfig: Partial<IConfig> = {
     ToastrModule.forRoot(),
     NgSelectModule,
     BsDatepickerModule.forRoot(),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    AccordionModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

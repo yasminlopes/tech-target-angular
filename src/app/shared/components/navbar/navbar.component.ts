@@ -19,15 +19,14 @@ export class NavbarComponent implements OnInit {
   @Input() classCustom: string = '';
 
   ngOnInit(): void {
-    const user = localStorage.getItem('user-tt')
+    const user = localStorage.getItem('user-tt');
     
     if(user) this.userLoggedService.user = JSON.parse(user);
-    console.log(this.userLoggedService.user)
 
-    if(this.userLoggedService.isCompany){
-      this.userName = this.userLoggedService.user.user_cnpj_fancy_name
+    if(this.userLoggedService?.isCompany){
+      this.userName = this.userLoggedService.user.user.corporate_name
     }else {
-      this.userName = this.userLoggedService.user.user_cpf_name + ' ' + this.userLoggedService.user.user_cpf_last_name;
+      this.userName = this.userLoggedService.user.user.common_user.user_name
     }
   }
 

@@ -20,6 +20,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ChatComponent } from './chat/chat.component';
 import { DashPerQuestionComponent } from './dash-per-question/dash-per-question.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 // import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -50,7 +51,8 @@ import { DashPerQuestionComponent } from './dash-per-question/dash-per-question.
         FormsModule,
         SharedModule,
         NgSelectModule,
-        BsDatepickerModule
+        BsDatepickerModule,
+        AccordionModule
     ],
 })
 export class PagesModule { }

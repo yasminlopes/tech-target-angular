@@ -8,11 +8,10 @@ import Chart from 'chart.js/auto';
 })
 export class DashboardComponent implements OnInit {
 
-  @ViewChild('myChartLine', {static: true}) myChartLine: ElementRef;
-  @ViewChild('myChartPie', {static: true}) myChartPie: ElementRef;
-  @ViewChild('myChartPie2', {static: true}) myChartPie2: ElementRef;
-  @ViewChild('myChartAxis', {static: true}) myChartAxis: ElementRef;
-  @ViewChild('myChartBar', {static: true}) myChartBar: ElementRef;
+  @ViewChild('myChartPieNumerica', {static: true}) myChartPieNumerica: ElementRef;
+  @ViewChild('myChartPieState', {static: true}) myChartPieState: ElementRef;
+  @ViewChild('myChartPieEstadoCivil', {static: true}) myChartPieEstadoCivil: ElementRef;
+  @ViewChild('myChartPieGenero', {static: true}) myChartPieGenero: ElementRef;
 
   constructor() { }
 
@@ -21,30 +20,21 @@ export class DashboardComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    this.chartLine();
-    this.chartPie();
-    this.chartPie2();
-    this.chartAxis();
-    this.chartBar();
+    this.chartPieNumerica();
+    this.chartPieState();
+    this.chartPieEstadoCivil();
+    this.chartPieGenero();
   }
 
-  chartLine(){
-    const ctx = new Chart(this.myChartLine.nativeElement, {
-      type: 'line',
+  chartPieNumerica(){
+    const ctx = new Chart(this.myChartPieNumerica.nativeElement, {
+      type: 'pie',
       data: {
-        labels: ["Pergunta 1","Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"],
+        labels: ["10","9", "8", "7", "6"],
         datasets: [
           {
-            label: 'Dataset 1',
-            data: [23, 51, 42, 56, 75],
-            borderColor: '#00AEFF',
-            fill: false,
-          },
-          {
-            label: 'Dataset 2',
-            data: [50, 12, 6, 20, 15],
-            borderColor: '#FFCC00',
-            fill: false,
+            data: [43, 20, 12, 36, 25],
+            backgroundColor: ['#36a2eb', 'purple', '#367E18', '#0F3460', '#ff6384'],
           }
         ]
       },
@@ -56,21 +46,22 @@ export class DashboardComponent implements OnInit {
           },
           title: {
             display: true,
-            text: 'Respostas - Formulário de Satisfação'
+            text: 'Respostas'
           }
         }
       }
     });
   }
 
-  chartPie(){
-    const ctx = new Chart(this.myChartPie.nativeElement, {
+ 
+  chartPieState(){
+    const ctx = new Chart(this.myChartPieState.nativeElement, {
       type: 'pie',
       data: {
-        labels: ["Discordo totalmente","Discordo", "Indiferente", "Concordo", "Concordo plenamente"],
+        labels: ["RO","SP", "RJ", "SC", "BH"],
         datasets: [
           {
-            data: [43, 20, 12, 36, 25],
+            data: [33, 10, 6, 24, 18],
             backgroundColor: ['#36a2eb', 'purple', 'gray', 'gold', '#ff6384'],
           }
         ]
@@ -83,22 +74,22 @@ export class DashboardComponent implements OnInit {
           },
           title: {
             display: true,
-            text: 'Qualitativa'
+            text: 'Estados'
           }
         }
       }
     });
   }
   
-  chartPie2(){
-    const ctx = new Chart(this.myChartPie2.nativeElement, {
+  chartPieEstadoCivil(){
+    const ctx = new Chart(this.myChartPieEstadoCivil.nativeElement, {
       type: 'pie',
       data: {
-        labels: ["Sempre","Muitas vezes", "Algumas vezes", "Poucas vezes", "Nunca"],
+        labels: ["Solteiro", "Casado", "Divorciado", "Noivo"],
         datasets: [
           {
-            data: [12, 67, 6, 29, 48],
-            backgroundColor: ['#36a2eb', 'purple', 'gray', 'gold', '#ff6384'],
+            data: [12, 37, 6, 9],
+            backgroundColor: ['#36a2eb', '#CD104D', '#829460', '#F57328'],
           }
         ]
       },
@@ -110,106 +101,37 @@ export class DashboardComponent implements OnInit {
           },
           title: {
             display: true,
-            text: 'Quantitativa'
+            text: 'Estado Civil'
           }
         }
       }
     });
   }
 
-  chartAxis(){
-    const ctx = new Chart(this.myChartAxis.nativeElement, {
-      type: 'line',
+  chartPieGenero(){
+    const ctx = new Chart(this.myChartPieGenero.nativeElement, {
+      type: 'pie',
       data: {
-        labels: ["Janeiro","Fevereiro", "Março", "Abril", "Maio"],
+        labels: ["Masculino", "Feminino"],
         datasets: [
           {
-            label: 'Formulário 1',
-            data: [10, 51, 42, 56, 100],
-            borderColor: '#36a2eb',
-            yAxisID: 'y'
-          },
-          {
-            label: 'Formulário 2',
-            data: [50, 12, 100, 20, 15],
-            borderColor: '#ff6384',
-            yAxisID: 'y1'
+            data: [63, 37],
+            backgroundColor: ['#36a2eb', '#ff6384'],
           }
         ]
       },
       options: {
-        responsive: true,
-        interaction: {
-          mode: 'index',
-          intersect: false,
-        },
-        plugins: {
-          title: {
-            display: true,
-            text: 'Respostas (MESES)'
-          }
-        },
-        scales: {
-          y: {
-            type: 'linear',
-            display: true,
-            position: 'left',
-          },
-          y1: {
-            type: 'linear',
-            display: true,
-            position: 'right',
-    
-            // grid line settings
-            grid: {
-              drawOnChartArea: false, // only want the grid lines for one axis to show up
-            },
-          },
-        }
-      },
-    });
-  }
-
-  chartBar(){
-    const ctx = new Chart(this.myChartBar.nativeElement, {
-      type: 'bar',
-      data: {
-        labels: ["Janeiro","Fevereiro", "Março", "Abril", "Maio"],
-        datasets: [
-          {
-            label: 'Formulário 1',
-            data: [100, 151, 242, 156, 255],
-            borderColor: '#36a2eb',
-            backgroundColor: '#36a2eb'
-          },
-          {
-            label: 'Formulário 2',
-            data: [250, 123, 110, 230, 159],
-            borderColor: '#ff6384',
-            backgroundColor: '#ff6384'
-          }
-        ]
-      },
-      options: {
-        indexAxis: 'y',
-        // Elements options apply to all of the options unless overridden in a dataset
-        // In this case, we are setting the border of each horizontal bar to be 2px wide
-        elements: {
-          bar: {
-            borderWidth: 2,
-          }
-        },
         responsive: true,
         plugins: {
           legend: {
-            position: 'right',
+            position: 'top',
           },
           title: {
             display: true,
-            text: 'Respostas (MESES)'
+            text: 'Gênero'
           }
         }
-      },
+      }
     });
   }
 

@@ -52,15 +52,18 @@ span{
 
 .h-divider {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: 100%;
   position: relative;
 }
 
 .h-divider .shadow {
+  border-radius: 50%;
   overflow: hidden;
-  height: 1px;
-  background-color: $neutro-n20;
+  height: 4px;
+  background-color: $cor-primaria-01;
+  box-shadow: 0 0.1rem 1rem $cor-primaria-01 !important;
 }
 
 /* Importing Bootstrap SCSS file. */

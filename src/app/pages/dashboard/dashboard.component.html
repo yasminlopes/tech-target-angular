@@ -1,17 +1,28 @@
-<div class="row">
-    <div class="col-md-6">
-        <canvas #myChartLine></canvas>
+<div class="my-4">
+    <h4>Dashboard</h4>
+</div>
+
+<div class="my-4 d-flex justify-content-end">
+    <button type="button" class="btn btn-warning" routerLink="/main/grafico">
+        Voltar
+    </button>
+</div>
+
+<div class="h-divider">
+    <div class="shadow"></div>
+</div>
+
+<div class="d-grid-content">
+    <div class="size-dash">
+        <canvas #myChartPieNumerica></canvas>
     </div>
-    <div class="col-md-6">
-        <canvas #myChartAxis></canvas>
+    <div class="size-dash">
+        <canvas #myChartPieState></canvas>
     </div>
-    <div class="col-md-12 my-5">
-        <canvas #myChartBar></canvas>
+    <div class="size-dash">
+        <canvas #myChartPieEstadoCivil></canvas>
     </div>
-    <div class="col-md-6">
-        <canvas #myChartPie></canvas>
-    </div>
-    <div class="col-md-6">
-        <canvas #myChartPie2></canvas>
+    <div class="size-dash">
+        <canvas #myChartPieGenero></canvas>
     </div>
 </div>
