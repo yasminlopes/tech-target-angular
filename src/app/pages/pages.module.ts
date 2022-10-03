@@ -21,6 +21,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { ChatComponent } from './chat/chat.component';
 import { DashPerQuestionComponent } from './dash-per-question/dash-per-question.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { FeedComponent } from './feed/feed.component';
 // import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -42,6 +43,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
          ContatoComponent,
          ChatComponent,
          DashPerQuestionComponent,
+         FeedComponent,
 
   ],
     imports: [
