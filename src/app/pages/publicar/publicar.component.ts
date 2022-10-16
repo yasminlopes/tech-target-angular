@@ -60,7 +60,7 @@ export class PublicarComponent implements OnInit {
   createForm(){
     console.log(this.publicarForm.value)
     console.log(this.userLoggedService.idUsuario)
-    this.http.post<any>(`${environment.api}/forms`, 
+    this.http.post<any>(`${environment.api}/forms/`, 
       {
         user_cnpj: this.userLoggedService.idUsuario,
         ...this.publicarForm.value

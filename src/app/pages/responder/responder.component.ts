@@ -77,7 +77,7 @@ export class ResponderComponent implements OnInit {
 
   responder(){
     console.log(this.responderForm.value)
-    this.http.post<any>(`${environment.api}/answers/${this.userLoggedService.user.user_cpf_id}`, this.responderForm.value).subscribe( res => {
+    this.http.post<any>(`${environment.api}/answers/${this.userLoggedService.user.user_cpf_id}/`, this.responderForm.value).subscribe( res => {
       console.log(res)
       if(res) {
         this.toastr.success('Formulário respondido com sucesso!');

@@ -77,7 +77,7 @@ export class RegisterUserComponent implements OnInit {
 
     const type =  this.registerUserForm.get('tipoPessoa')?.value == 'fisica' ? 'cpf' : 'cnpj';
     
-    this.http.post<any>(`${environment.api}/users/commonUsers/?user_type=${type}`, {
+    this.http.post<any>(`${environment.api}/users/commonUsers/?user_type=${type}/`, {
       user_name: this.registerUserForm.get('name')?.value + ' ' + this.registerUserForm.get('last_name')?.value,
       ...this.registerUserForm.value
     }).subscribe( res => {
