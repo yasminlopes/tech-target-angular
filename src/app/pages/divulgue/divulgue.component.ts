@@ -18,13 +18,12 @@ export class DivulgueComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.getMyForms()
+    this.getMyForms()
   }
 
   getMyForms(){
-    this.http.get<any>(`${environment.api}/form/listForms/perUser/${this.userLoggedService.idUsuario}`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/forms/perUser/${this.userLoggedService.idUsuario}`).subscribe( res => {
       console.log(res)
-      res.shift()
       this.forms = res
     })
   }

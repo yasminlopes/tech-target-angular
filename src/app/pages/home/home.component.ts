@@ -20,9 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   getDestaques(){
-    this.http.get<any>(`${environment.api}/form/listForms/allForms`).subscribe( res => {
-      console.log(res)
-      res.shift()
+    this.http.get<any>(`${environment.api}/forms/`).subscribe( res => {
       this.destaques = res.slice(0, 4)
     })
   }

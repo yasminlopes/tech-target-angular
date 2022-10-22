@@ -35,10 +35,6 @@ export class RegisterUserComponent implements OnInit {
     this.iniciarForm();
 
     this.listenState()
-
-    this.registerUserForm.valueChanges.subscribe(x => {
-      console.log(x)
-    })
   }
 
   listenState(){
@@ -77,7 +73,7 @@ export class RegisterUserComponent implements OnInit {
 
     const type =  this.registerUserForm.get('tipoPessoa')?.value == 'fisica' ? 'cpf' : 'cnpj';
     
-    this.http.post<any>(`${environment.api}/users/commonUsers/?user_type=${type}/`, {
+    this.http.post<any>(`${environment.api}/users/commonUsers/?user_type=${type}`, {
       user_name: this.registerUserForm.get('name')?.value + ' ' + this.registerUserForm.get('last_name')?.value,
       ...this.registerUserForm.value
     }).subscribe( res => {
@@ -106,19 +102,20 @@ export class RegisterUserComponent implements OnInit {
   }
 
   getGender(){
-    this.http.get<any>(`${environment.api}/genders`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/genders/`).subscribe( res => {
+      console.log(res)
       this.genders = res
     })
   }
 
   getStatusCivil(){
-    this.http.get<any>(`${environment.api}/civilStatus`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/civilStatus/`).subscribe( res => {
       this.statusCivil = res
     })
   }
 
   getSegments(){
-    this.http.get<any>(`${environment.api}/segments`).subscribe( res => {
+    this.http.get<any>(`${environment.api}/segments/`).subscribe( res => {
       this.segments = res
     })
   }

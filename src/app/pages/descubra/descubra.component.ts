@@ -20,9 +20,7 @@ export class DescubraComponent implements OnInit {
   }
 
   getForms(){
-    this.http.get<any>(`${environment.api}/forms`).subscribe( res => {
-      console.log(res)
-      res.shift()
+    this.http.get<any>(`${environment.api}/forms/`).subscribe( res => {
       this.forms = res
     })
   }

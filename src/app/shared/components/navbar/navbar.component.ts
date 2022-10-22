@@ -19,6 +19,11 @@ export class NavbarComponent implements OnInit {
   @Input() classCustom: string = '';
 
   ngOnInit(): void {
+    if(this.router.url !== '/register-user' && this.router.url !== '/login')
+      this.getNameUser()
+  }
+
+  getNameUser(){
     const user = localStorage.getItem('user-tt');
     
     if(user) this.userLoggedService.user = JSON.parse(user);

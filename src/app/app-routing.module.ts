@@ -29,6 +29,7 @@ const routes: Routes = [
       { path: 'divulgue', component: DivulgueComponent },
       { path: 'descubra', component: DescubraComponent },
       { path: 'publicar', component: PublicarComponent },
+      { path: 'publicar/:id', component: PublicarComponent },
       { path: 'grafico', component: DashPerQuestionComponent },
       { path: 'grafico/:id', component: DashboardComponent },
       { path: 'responder/:id', component: ResponderComponent },

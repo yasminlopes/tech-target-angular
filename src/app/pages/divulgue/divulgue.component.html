@@ -29,7 +29,7 @@
                     <small style="color: #aaa;">{{form.segment}}</small>
                     <p class="card-text">{{form.form_description}}</p>
                     <div class="btn-align">
-                        <button type="btnlogin" class="btn-login">Editar</button>
+                        <button type="btnlogin" class="btn-login"  [routerLink]="['/main/publicar', form.id]">Editar</button>
                     </div>
             </div>
         </div>

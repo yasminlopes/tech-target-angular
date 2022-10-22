@@ -12,6 +12,11 @@ export const NUMERICO = [
     { value: 3, name: 'num3', checked: false},
     { value: 4, name: 'num4', checked: false},
     { value: 5, name: 'num5', checked: false},
+    { value: 6, name: 'num6', checked: true},
+    { value: 7, name: 'num7', checked: false},
+    { value: 8, name: 'num8', checked: false},
+    { value: 9, name: 'num9', checked: false},
+    { value: 10, name: 'num10', checked: false},
 ]
 
 export const QUANTITATIVA = [
