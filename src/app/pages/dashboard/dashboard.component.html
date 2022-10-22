@@ -2,10 +2,15 @@
     <h4>Dashboard</h4>
 </div>
 
-<div class="my-4 d-flex justify-content-end">
-    <button type="button" class="btn btn-warning" routerLink="/main/grafico">
-        Voltar
-    </button>
+<div class="my-4 row">
+    <div class="col-md-10">
+        {{dash?.question_title}}
+    </div>
+    <div class="col-md-2 d-flex justify-content-end">
+        <button type="button" class="btn btn-warning" routerLink="/main/grafico">
+            Voltar
+        </button>
+    </div>
 </div>
 
 <div class="h-divider">

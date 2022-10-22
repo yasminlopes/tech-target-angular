@@ -7,83 +7,13 @@
     <div class="shadow"></div>
 </div>
 
-<accordion [isAnimated]="true">
-  <accordion-group class="mb-3" heading="Formulário do produto teste">
-    <div class="content-dash-grid">
+<accordion [isAnimated]="true" *ngFor="let form of forms">
+  <accordion-group class="mb-3" [heading]="form.form_title">
+    <div class="content-dash-grid" *ngFor="let question of form.questions">
       <div>
-        1) Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+        {{question.question_order}}) {{question.question_title}}
       </div>
-      <button type="button" class="btn btn-primary" [routerLink]="['/main/grafico', 2]">
-        Visualizar
-      </button>
-    </div>
-    <div class="content-dash-grid">
-      <div>
-        2) Donec enim felis, efficitur cursus blandit eget, blandit nec mauris?
-      </div>
-      <button type="button" class="btn btn-primary">
-        Visualizar
-      </button>
-    </div>
-    <div class="content-dash-grid">
-      <div>
-        3) Aliquam sollicitudin risus et sem posuere?
-      </div>
-      <button type="button" class="btn btn-primary">
-        Visualizar
-      </button>
-    </div>
-    <div class="content-dash-grid">
-      <div>
-        4) Cras condimentum tempor est at porta?
-      </div>
-      <button type="button" class="btn btn-primary">
-        Visualizar
-      </button>
-    </div>
-    <div class="content-dash-grid">
-      <div>
-        5) Aliquam cursus eros eros, in porta eros scelerisque et?
-      </div>
-      <button type="button" class="btn btn-primary">
-        Visualizar
-      </button>
-    </div>
-  </accordion-group>
-
-  <accordion-group class="mb-3" heading="Pesquisa do produto Voltron">
-    <div class="content-dash-grid">
-      <div>
-        1) Apenas um xdd, é sobre issso?
-      </div>
-      <button type="button" class="btn btn-primary" [routerLink]="['/main/grafico', 2]">
-        Visualizar
-      </button>
-    </div>
-    <div class="content-dash-grid">
-      <div>
-        2) seila tlg, é sobre issso mesmo?
-      </div>
-      <button type="button" class="btn btn-primary">
-        Visualizar
-      </button>
-    </div>
-  </accordion-group>
-
-  <accordion-group class="mb-3" heading="Pesquisa de satisfação">
-    <div class="content-dash-grid">
-      <div>
-        1) Apenas um xdd, é sobre issso?
-      </div>
-      <button type="button" class="btn btn-primary" [routerLink]="['/main/grafico', 2]">
-        Visualizar
-      </button>
-    </div>
-    <div class="content-dash-grid">
-      <div>
-        2) seila tlg, é sobre issso mesmo?
-      </div>
-      <button type="button" class="btn btn-primary">
+      <button type="button" class="btn btn-primary" [routerLink]="['/main/grafico', question.id]">
         Visualizar
       </button>
     </div>
