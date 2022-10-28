@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CpfValidator } from 'src/app/validators/cpf.validator';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -23,7 +24,8 @@ export class RegisterUserComponent implements OnInit {
     private http: HttpClient,
     private formBuilder: FormBuilder,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private cpfValidator: CpfValidator
   ) { }
 
   ngOnInit(): void {
@@ -48,7 +50,7 @@ export class RegisterUserComponent implements OnInit {
       tipoPessoa: ['fisica', [ Validators.required ]],
       name: ['', [ Validators.required ]],
       last_name: ['', [ Validators.required ]],
-      cpf: [''],
+      cpf: ['', [Validators.required, this.cpfValidator.validaCpf()]],
       cnpj: [''],
       corporate_name: [''],
       fancy_name: [''],
@@ -130,5 +132,7 @@ export class RegisterUserComponent implements OnInit {
     
     return `${ye}-${mo}-${da}`
   }
+
+
 
 }
