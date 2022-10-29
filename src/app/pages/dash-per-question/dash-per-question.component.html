@@ -1,19 +1,26 @@
 <div class="my-4">
-    <h4>Visualize os gráficos das pesquisas implementados para melhor controle</h4>
-    <span style="display: block;color: #aaa;">Clique no botão "Visualizar", será realizado uma demonstração de dashboar por pergunta</span>
+  <h4>
+    Visualize os gráficos das pesquisas implementados para melhor controle
+  </h4>
+  <span
+    >Clique no botão <strong>"Visualizar"</strong>, será realizado uma
+    demonstração de dashboar por pergunta</span
+  >
 </div>
 
 <div class="h-divider">
-    <div class="shadow"></div>
+  <div class="shadow"></div>
 </div>
 
 <accordion [isAnimated]="true" *ngFor="let form of forms">
   <accordion-group class="mb-3" [heading]="form.form_title">
     <div class="content-dash-grid" *ngFor="let question of form.questions">
-      <div>
-        {{question.question_order}}) {{question.question_title}}
-      </div>
-      <button type="button" class="btn btn-primary" [routerLink]="['/main/grafico', question.id]">
+      <div>{{ question.question_order }}) {{ question.question_title }}</div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        [routerLink]="['/main/grafico', question.id]"
+      >
         Visualizar
       </button>
     </div>

@@ -1,3 +1,16 @@
+@import '/src/assets/styles/paletacores.scss';
+@import '/src/assets/styles/componentes.scss';
+@import '/src/assets/styles/tipografia.scss';
+
+h4::before{
+    content: "";
+            display: inline-block;
+            background-color: $cor-secundaria-01;
+            height: 20px;
+            width: 5px;
+            margin-right: 8px;
+}
+
 .content-dash-grid{
     display: grid;
     grid-template-columns: 1fr 120px;
