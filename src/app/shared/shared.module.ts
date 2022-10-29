@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselMainComponent } from './components/carousel-main/carousel-main.component';
 import { RadiosComponent } from './components/radios/radios.component';
+import { CdkMenuModule } from '@angular/cdk/menu';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
     declarations: [
@@ -13,7 +15,9 @@ import { RadiosComponent } from './components/radios/radios.component';
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        OverlayModule,
+        CdkMenuModule
     ],
     exports: [
         NavbarComponent,

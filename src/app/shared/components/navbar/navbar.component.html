@@ -1,13 +1,67 @@
-<nav class="navbar">
-    <div class="container {{classCustom.length === 0 ? 'nav-custom' : classCustom}}">
-      <a class="navbar-brand" href="#">
-        <img class="img-size" src="assets/LOGO_TECH_TARGET.svg" alt="">
-      </a>
-      <div *ngIf="router.url !== '/register-user' && router.url !== '/login'">Bem vindo(a), {{userName}}</div>
-      <div>
-        <button *ngIf="router.url === '/login'" routerLink="/register-user" type="btnlogin" class="btn-login">Cadastrar-se</button>
-        <button *ngIf="router.url === '/register-user'" routerLink="/login" type="btnlogin" class="btn-login">Login</button>
-        <button *ngIf="router.url !== '/register-user' && router.url !== '/login' " routerLink="/login" type="btnlogin" class="btn-login">Sair</button>
+<div class="head" >
+  <div class="head__content">
+    <div class="head__content-left"></div>
+
+    <div class="head__content-right">
+      <div class="head__menu-item">
+        <button
+          class="head__menu-item-btn ripple"
+          [cdkMenuTriggerFor]="notificacaoOverlay"
+        >
+        <i class='bx bx-bell'></i>
+
+        </button>
+      </div>
+
+      <span class="head__menu-item">{{ userName }}</span>
+      <div class="head__user-avatar-container">
+        <div class="head__user-avatar"
+        [cdkMenuTriggerFor]="userOverlay">
+          <img src="assets/img/user-icon.png" alt="" class="user__avatar" />
+          <div class="circle-indicator pulse"></div>
+        </div>
       </div>
     </div>
-</nav>
+  </div>
+</div>
+
+<ng-template #notificacaoOverlay>
+  <div class="overlay overlay-notification overlay-fall" cdkMenu>
+    <ul>
+      <li class="notification-head-container">
+        <div class="notification-head">Notificações</div>
+        <span class="view-all-link">
+          <a>Ver todas</a>
+        </span>
+      </li>
+      <li
+        class="notification-message-container"
+        *ngFor="let notificacao of notificacoes"
+        cdkMenuItem
+      >
+        <i [class]="notificacao.icon"></i>
+        <div>
+          <div class="notification-title">
+            {{ notificacao.titulo }}
+          </div>
+          <p class="notification-desc">
+            {{ notificacao.descricao }}
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template #userOverlay>
+  <div class="overlay overlay-user overlay-fall" cdkMenu>
+    <ul>
+      <li *ngFor="let user of usuario">
+        <a>
+          <i class="icon" [ngClass]="user.icon"></i>
+          <span [routerLink]="[user.routeLink]">{{ user.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</ng-template>
