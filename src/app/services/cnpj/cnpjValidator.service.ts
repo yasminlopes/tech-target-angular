@@ -6,7 +6,7 @@ import { AbstractControl } from '@angular/forms';
 })
 export class CnpjValidatorService {
   public cnpjValido(strCNPJ: string): boolean {
-    if (!strCNPJ) return false
+    if (!strCNPJ) return true
 
   // Aceita receber o valor como string, número ou array com todos os dígitos
   const isString = typeof strCNPJ === 'string'

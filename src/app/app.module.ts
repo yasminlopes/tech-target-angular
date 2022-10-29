@@ -1,16 +1,16 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr';
-import { NgSelectModule } from '@ng-select/ng-select';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -32,7 +32,8 @@ const maskConfig: Partial<IConfig> = {
     NgSelectModule,
     BsDatepickerModule.forRoot(),
     NgxMaskModule.forRoot(),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(), 
+
   ],
   providers: [],
   bootstrap: [AppComponent]
