@@ -52,3 +52,31 @@ h4::before{
         background-color: $cor-primaria-01;
     }
 }
+
+.head__search-container {
+    position: relative;
+  
+    .head__search-normal {
+      .search {
+        border: none;
+        width: 100%;
+        height: 2.375rem;
+        padding-left: 2.5rem;
+        padding-right: 1.25rem;
+        text-align: left;
+        border: 1px solid $cor-secundaria-01;
+        box-shadow: none;
+        border-radius: 5px;
+        outline: 0;
+      }
+  
+      .search-icon {
+        position: absolute;
+        font-size: 1.2rem;
+        line-height: 2.375rem;
+        left: 0.813rem;
+        top: 0;
+        color: $cor-secundaria-01;
+      }
+    }
+  }

@@ -22,6 +22,7 @@ import { ChatComponent } from './chat/chat.component';
 import { DashPerQuestionComponent } from './dash-per-question/dash-per-question.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { FeedComponent } from './feed/feed.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 // import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -54,7 +55,8 @@ import { FeedComponent } from './feed/feed.component';
         SharedModule,
         NgSelectModule,
         BsDatepickerModule,
-        AccordionModule
+        AccordionModule,
+        Ng2SearchPipeModule
     ],
 })
 export class PagesModule { }

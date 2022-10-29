@@ -11,6 +11,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
+import { OverlayModule } from '@angular/cdk/overlay'
+import { CdkMenuModule } from '@angular/cdk/menu'
 
 const maskConfig: Partial<IConfig> = {
   validation: false,

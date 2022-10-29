@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 export class DescubraComponent implements OnInit {
 
   forms: any[] = []
+  searchText: any;
 
   constructor(
     private http: HttpClient
