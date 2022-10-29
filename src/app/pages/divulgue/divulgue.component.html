@@ -22,12 +22,14 @@
     <div class="col-md-6 row" *ngFor="let form of forms">
         <div class="grid-card">
             <div>
-                <img src="assets/question.jpg" class="img-thumbnail"alt="...">
+                <img src="assets/img/Thumbnail.png" 
+                class="img-thumbnail"alt="...">
             </div>
             <div>
                     <h5 class="card-title">{{form.form_title}}</h5>
                     <small style="color: #aaa;">{{form.segment}}</small>
                     <p class="card-text">{{form.form_description}}</p>
+                    
                     <div class="btn-align">
                         <button type="btnlogin" class="btn-login"  [routerLink]="['/main/publicar', form.id]">Editar</button>
                     </div>

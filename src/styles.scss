@@ -60,11 +60,8 @@ span{
 }
 
 .h-divider .shadow {
-  border-radius: 50%;
   overflow: hidden;
-  height: 4px;
-  background-color: $cor-primaria-01;
-  box-shadow: 0 0.1rem 1rem $cor-primaria-01 !important;
+  border-bottom: 2px solid rgb(231, 231, 231);
 }
 
 /* Importing Bootstrap SCSS file. */

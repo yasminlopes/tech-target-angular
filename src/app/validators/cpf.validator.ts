@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { CpfValidatorService } from '../services/cpf/cpfValidator.service';
+import { CpfValidatorService } from '../shared/services/cpf/cpfValidator.service';
+
 
 @Injectable({
   providedIn: 'root',

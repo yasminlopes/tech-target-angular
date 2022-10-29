@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { CnpjValidatorService } from '../services/cnpj/cnpjValidator.service';
+import { CnpjValidatorService } from '../shared/services/cnpj/cnpjValidator.service';
+
 
 @Injectable({
   providedIn: 'root',
