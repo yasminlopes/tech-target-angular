@@ -2,9 +2,15 @@
 @import "/src/assets/styles/componentes.scss";
 @import "/src/assets/styles/tipografia.scss";
 
-h2 {
+.h2-details {
   color: $cor-secundaria-02;
 }
+
+.typeUser{
+  color: #fff;
+}
+
+
 
 .disabled-button {
   opacity: 0.7;
@@ -36,12 +42,13 @@ h2 {
   grid-column: span 2;
 }
 
-.form input[type="text"],
+.form input[type="text"]
 .form input[type="email"],
-.form textarea {
+.form input[type="password"],
+.form textarea{
   font: 400 1rem/1.5;
   border: 1px solid #ccc;
-//   padding: 12px;
+  // padding: 12px;
   border-radius: 4px;
   width: 100%;
   box-sizing: border-box;
@@ -188,7 +195,6 @@ h2 {
     }
     .register-type {
       border-radius: 5px 5px 0 0;
-      background: var(--cor-12);
     }
   }
   

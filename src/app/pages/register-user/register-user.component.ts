@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CnpjValidator } from 'src/app/validators/cnpj.validator';
 import { CpfValidator } from 'src/app/validators/cpf.validator';
 import { environment } from 'src/environments/environment';
 
@@ -25,7 +26,8 @@ export class RegisterUserComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
-    private cpfValidator: CpfValidator
+    private cpfValidator: CpfValidator,
+    private cnpjValidator: CnpjValidator
   ) { }
 
   ngOnInit(): void {
@@ -33,9 +35,7 @@ export class RegisterUserComponent implements OnInit {
     this.getState();
     this.getStatusCivil();
     this.getSegments();
-
     this.iniciarForm();
-
     this.listenState()
   }
 
@@ -51,7 +51,7 @@ export class RegisterUserComponent implements OnInit {
       name: ['', [ Validators.required ]],
       last_name: ['', [ Validators.required ]],
       cpf: ['', [Validators.required, this.cpfValidator.validaCpf()]],
-      cnpj: [''],
+      cnpj: ['', [Validators.required, this.cnpjValidator.validaCnpj()]],
       corporate_name: [''],
       fancy_name: [''],
       segments: [null],
@@ -72,13 +72,16 @@ export class RegisterUserComponent implements OnInit {
     this.registerUserForm.patchValue({
       birth_date: this.convertDate(this.registerUserForm.get('birth_date')?.value)
     }) 
-
+    
     const type =  this.registerUserForm.get('tipoPessoa')?.value == 'fisica' ? 'cpf' : 'cnpj';
     
     this.http.post<any>(`${environment.api}/users/commonUsers/?user_type=${type}`, {
+      
       user_name: this.registerUserForm.get('name')?.value + ' ' + this.registerUserForm.get('last_name')?.value,
       ...this.registerUserForm.value
-    }).subscribe( res => {
+
+      
+    }).subscribe( res => {      
       if(res) {
         this.toastr.success('Usuário cadastrado com sucesso!');
         this.router.navigate(['/login'])
@@ -90,7 +93,7 @@ export class RegisterUserComponent implements OnInit {
 
   getState(){
     this.http.get<any>(`${environment.api}/country/states`).subscribe( res => {
-      console.log(res)
+      // console.log(res)
       this.estados = res
     })
   }
@@ -99,13 +102,13 @@ export class RegisterUserComponent implements OnInit {
     this.http.get<any>(`${environment.api}/country/cities?state=${valor}`).subscribe( res => {
       this.registerUserForm.get('user_city')?.patchValue(null)
       this.cidades = res
-      console.log(this.cidades)
+      // console.log(this.cidades)
     })
   }
 
   getGender(){
     this.http.get<any>(`${environment.api}/genders/`).subscribe( res => {
-      console.log(res)
+      // console.log(res)
       this.genders = res
     })
   }
