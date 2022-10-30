@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { CarouselMainComponent } from './components/carousel-main/carousel-main.component';
-import { RadiosComponent } from './components/radios/radios.component';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CarouselMainComponent } from './components/carousel-main/carousel-main.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RadiosComponent } from './components/radios/radios.component';
 
 @NgModule({
     declarations: [

@@ -40,11 +40,13 @@
       <div>
         <label for="nome">Nome</label>
         <input class="form-control" type="text" formControlName="name" />
+        <app-form-erro [formControl]="$any(registerUserForm).get('name')" ngDefaultControl></app-form-erro>
       </div>
 
       <div>
         <label for="nome">Sobrenome</label>
         <input class="form-control" type="text" formControlName="last_name" />
+        <app-form-erro [formControl]="$any(registerUserForm).get('last_name')" ngDefaultControl></app-form-erro>
       </div>
 
       <div>
@@ -57,6 +59,7 @@
           formControlName="user_state"
         >
         </ng-select>
+        <app-form-erro [formControl]="$any(registerUserForm).get('user_state')" ngDefaultControl></app-form-erro>
       </div>
 
       <div>
@@ -69,6 +72,7 @@
           formControlName="user_city"
         >
         </ng-select>
+        <app-form-erro [formControl]="$any(registerUserForm).get('user_city')" ngDefaultControl></app-form-erro>
       </div>
 
       <div>
@@ -78,6 +82,7 @@
           type="text"
           formControlName="user_address"
         />
+        <app-form-erro [formControl]="$any(registerUserForm).get('user_address')" ngDefaultControl></app-form-erro>
       </div>
 
       <ng-container
@@ -91,6 +96,7 @@
             formControlName="cpf"
             maxlength="11"
           />
+          <app-form-erro [formControl]="$any(registerUserForm).get('cpf')" ngDefaultControl></app-form-erro>
           <small
             class="text-danger"
             *ngIf="$any(registerUserForm).get('cpf').errors?.cpfInvalido"
@@ -108,6 +114,7 @@
             type="text"
             formControlName="profession"
           />
+          <app-form-erro [formControl]="$any(registerUserForm).get('profession')" ngDefaultControl></app-form-erro>
         </div>
 
         <div>
@@ -120,6 +127,7 @@
             formControlName="gender"
           >
           </ng-select>
+          <app-form-erro [formControl]="$any(registerUserForm).get('gender')" ngDefaultControl></app-form-erro>
         </div>
         <div>
           <label>Estado Civil</label>
@@ -132,7 +140,9 @@
             formControlName="civil_status"
           >
           </ng-select>
+          <app-form-erro [formControl]="$any(registerUserForm).get('civil_status')" ngDefaultControl></app-form-erro>
         </div>
+
         <div>
           <label>Data de Nascimento</label>
           <input
@@ -140,6 +150,7 @@
             class="form-control"
             formControlName="birth_date"
           />
+          <app-form-erro [formControl]="$any(registerUserForm).get('birth_date')" ngDefaultControl></app-form-erro>
         </div>
       </ng-container>
 
@@ -154,6 +165,7 @@
             formControlName="cnpj"
             maxlength="14"
           />
+          <app-form-erro [formControl]="$any(registerUserForm).get('cnpj')" ngDefaultControl></app-form-erro>
           <small
             class="text-danger"
             *ngIf="$any(registerUserForm).get('cnpj').errors?.cnpjInvalido"
@@ -170,6 +182,7 @@
             type="text"
             formControlName="corporate_name"
           />
+          <app-form-erro [formControl]="$any(registerUserForm).get('corporate_name')" ngDefaultControl></app-form-erro>
         </div>
 
         <div>
@@ -179,6 +192,7 @@
             type="text"
             formControlName="fancy_name"
           />
+          <app-form-erro [formControl]="$any(registerUserForm).get('fancy_name')" ngDefaultControl></app-form-erro>
         </div>
 
         <div>
@@ -190,8 +204,11 @@
             formControlName="segments"
           >
           </ng-select>
+          <app-form-erro [formControl]="$any(registerUserForm).get('segments')" ngDefaultControl></app-form-erro>
         </div>
+
       </ng-container>
+
       <div>
         <label>Telefone</label>
         <input
@@ -200,12 +217,13 @@
           formControlName="user_phone"
           mask="(00) 00000-0000"
         />
+        <app-form-erro [formControl]="$any(registerUserForm).get('user_phone')" ngDefaultControl></app-form-erro>
       </div>
 
       <div>
         <label>E-mail</label>
-
         <input class="form-control" type="text" formControlName="user_email" />
+        <app-form-erro [formControl]="$any(registerUserForm).get('user_email')" ngDefaultControl></app-form-erro>
       </div>
 
       <div>
@@ -215,6 +233,7 @@
           type="password"
           formControlName="user_password"
         />
+        <app-form-erro [formControl]="$any(registerUserForm).get('user_password')" ngDefaultControl></app-form-erro>
       </div>
       <div class="btn-align">
       </div>

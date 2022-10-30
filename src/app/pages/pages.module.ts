@@ -23,6 +23,7 @@ import { DashPerQuestionComponent } from './dash-per-question/dash-per-question.
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { FeedComponent } from './feed/feed.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormErroComponent } from '../shared/components/form-erro/form-erro.component';
 // import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -45,6 +46,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
          ChatComponent,
          DashPerQuestionComponent,
          FeedComponent,
+         FormErroComponent
 
   ],
     imports: [

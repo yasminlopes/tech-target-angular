@@ -27,6 +27,7 @@
             formControlName="user_email"
             type="text"
           />
+          <app-form-erro [formControl]="$any(loginForm).get('user_email')" ngDefaultControl></app-form-erro>
         </div>
 
         <div class="col-2">
@@ -37,7 +38,9 @@
             type="password"
             (keyup.enter)="login()"
           />
+          <app-form-erro [formControl]="$any(loginForm).get('user_password')" ngDefaultControl></app-form-erro>
         </div>
+
         <button (click)="login()" class="botao col-2">Login</button>
         <a href="">Esqueceu a senha?</a>
       </form>
