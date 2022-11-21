@@ -1,6 +1,6 @@
 export const NOTIFICACOES = [
   {
-    icon: 'bx bx-search',
+    icon: 'bx bx-check',
     titulo: 'Pesquisa Respondida',
     descricao: 'Obrigado pela a sua participação na pesquisa. Clique para visualizar.',
   },
