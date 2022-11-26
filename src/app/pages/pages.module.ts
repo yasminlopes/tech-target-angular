@@ -21,9 +21,11 @@ import { ContatoComponent } from './contato/contato.component';
 import { ChatComponent } from './chat/chat.component';
 import { DashPerQuestionComponent } from './dash-per-question/dash-per-question.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-import { FeedComponent } from './feed/feed.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormErroComponent } from '../shared/components/form-erro/form-erro.component';
+import { PublishComponent } from './feed/components/publish/publish.component';
+import { FeedComponent } from './feed/container/feed.component';
+import { CdkMenuModule } from '@angular/cdk/menu';
 // import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -46,7 +48,8 @@ import { FormErroComponent } from '../shared/components/form-erro/form-erro.comp
          ChatComponent,
          DashPerQuestionComponent,
          FeedComponent,
-         FormErroComponent
+         FormErroComponent,
+         PublishComponent,
 
   ],
     imports: [
@@ -58,7 +61,8 @@ import { FormErroComponent } from '../shared/components/form-erro/form-erro.comp
         NgSelectModule,
         BsDatepickerModule,
         AccordionModule,
-        Ng2SearchPipeModule
+        Ng2SearchPipeModule,
+        CdkMenuModule
     ],
 })
 export class PagesModule { }

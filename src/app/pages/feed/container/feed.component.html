@@ -1,0 +1,56 @@
+<div class="my-4">
+  <h4>
+    <!-- <i class="bx bxs-edit"></i> -->
+    Criar Publicação
+  </h4>
+</div>
+<!-- PUBLICAR -->
+<form class="widget-post" [formGroup]="feedForm">
+  <div class="widget-post__header">
+    <input
+      type="text"
+      placeholder="Insira aqui título do seu post!"
+      class="form-control widget-post__title-input"
+      formControlName="post_title"
+    />
+  </div>
+  <div class="widget-post__form" >
+    <div class="widget-post__content">
+      <textarea
+        class="form-control widget-post__textarea scroller"
+        placeholder="Compartilhe e faça networking!"
+        formControlName="post_description"
+      ></textarea>
+    </div>
+
+    <div class="widget-post__actions post--actions">
+      <div class="post-actions__attachments">
+        <button type="button" class="btn post-actions__upload attachments--btn">
+          <label for="upload-image" class="post-actions__label">
+            <i class="bx bx-image-add"></i>
+            Inserir mídia
+          </label>
+        </button>
+        <input
+        class="form-control"
+          type="file"
+          id="upload-image"
+          accept="image/*"
+          multiple
+          formControlName="post_picture"
+        />
+      </div>
+      <div class="post-actions__widget">
+        <button class="btn post-actions__publish" (click)="createPost()">Publicar</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<br />
+<div class="my-4">
+  <h4>Publicações Recentes</h4>
+</div>
+<br />
+<!-- Publicações -->
+<app-publish></app-publish>

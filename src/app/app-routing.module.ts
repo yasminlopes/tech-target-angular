@@ -6,7 +6,7 @@ import { DashPerQuestionComponent } from './pages/dash-per-question/dash-per-que
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DescubraComponent } from './pages/descubra/descubra.component';
 import { DivulgueComponent } from './pages/divulgue/divulgue.component';
-import { FeedComponent } from './pages/feed/feed.component';
+import { FeedComponent } from './pages/feed/container/feed.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LadingPageComponent } from './pages/lading-page/lading-page.component';
 import { LayoutMainComponent } from './pages/layout-main/layout-main.component';

@@ -1,0 +1,88 @@
+@import "/src/assets/styles/paletacores.scss";
+@import "/src/assets/styles/componentes.scss";
+@import "/src/assets/styles/tipografia.scss";
+
+// Template Publicações
+section,
+article {
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: $cor-branco;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+}
+article {
+  flex-direction: column;
+}
+article header {
+  border-bottom: none;
+  justify-content: start;
+}
+
+// button, .bx{
+//   font-size: 1rem;
+//   text-align: center;
+// }
+
+img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+p, small{
+  color: $cor-secundaria-02;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+
+  &__user-id {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0 0 1em;
+    gap: 10px;
+    &-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+   
+    &-title {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
+  &__content {
+    width: 100%;
+  }
+  &__reactions{
+    display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  &-btn{
+    border: 0;
+    outline: 0;
+    width: fit-content;
+    height: 40px;
+    background: transparent;
+    color: $cor-primaria-02;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    &:hover{
+      font-size: 1.3rem;
+      background: $cor-primaria-02;
+      color: white;
+    }
+  }
+  }
+}
