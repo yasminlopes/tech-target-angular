@@ -12,4 +12,8 @@ export class ContatoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sendMessage(){
+    alert('Obrigado! Mensagem enviada com sucesso! Em breve entraremos em contato.')
+  }
+
 }
