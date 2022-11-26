@@ -46,17 +46,23 @@
 }
 
 .block-chat{
-    padding: 10px;
-    width: 70%;
-    border-radius: 10px;
+    color: #444;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    display: inline-block;
+    position: relative
 }
+
+
 
 .me{
     background: rgb(236, 235, 235);
     align-self: flex-end;
+    
 }
-
 .to{
     background: #b7d3fd;
-    align-self: flex-start;
+    align-self: flex-start;    
 }
