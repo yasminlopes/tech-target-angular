@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserLoggedService } from 'src/app/shared/services/user-logged/user-logged.service';
 import { environment } from 'src/environments/environment';
+import { FeedState } from '../state/feed.state';
 
 @Component({
   selector: 'app-feed',
@@ -14,19 +15,21 @@ import { environment } from 'src/environments/environment';
 export class FeedComponent implements OnInit {
   feedForm: FormGroup;
   public id: string | null;
+  public publicacao$ = this.feedState.feedPosts
   public idUserCnpj: '';
+
 
   constructor(
     private http: HttpClient,
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private router: Router,
-    private userLoggedService: UserLoggedService
+    private userLoggedService: UserLoggedService,
+    private feedState: FeedState
   ) {}
 
   ngOnInit(): void {
     this.iniciarForm();
-    this.getCpfCnpjUser();
+    this.getUserData();
     this.getReactions(6);
     this.getPosts();
   }
@@ -43,16 +46,18 @@ export class FeedComponent implements OnInit {
   async getPosts() {
     return new Promise((resolve, reject) => {
       this.http.get<any>(`${environment.api}/posts/`).subscribe((res) => {
-        console.log('GET POSTS', res);
-        resolve('ok');
+        // resolve('ok');
+        console.log('getposts', res);
+        
+        this.feedState.feedPosts.next(res)
       });
+      
     });
   }
 
   getReactions(idPost: number) {
     return new Promise((resolve, reject) => {
       this.http.get<any>(`${environment.api}/postReactions/filter?post_id=${idPost}`).subscribe((res) => {
-        console.log('getReactions', res);
         resolve('ok');
       });
     });
@@ -75,7 +80,7 @@ export class FeedComponent implements OnInit {
       });
   }
 
-  getCpfCnpjUser() {
+  getUserData() {
     const user = localStorage.getItem('user-tt');
 
     if (user) this.userLoggedService.user = JSON.parse(user);

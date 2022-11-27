@@ -4,7 +4,10 @@ export interface Feed {
   post_title: string;
   post_description: string;
   post_picture: null;
-  post_date: string
+  post_date: string;
+  user_owner: {
+    corporate_name: string;
+  }
 }
 
 export interface Reactions extends Feed {
@@ -14,3 +17,5 @@ export interface Reactions extends Feed {
   user_reacting: number
   reaction: number
 }
+
+

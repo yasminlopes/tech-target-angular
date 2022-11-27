@@ -1,23 +1,20 @@
 <div class="posts">
-  <article>
-    <header class="posts__user-id">
+  <article *ngFor="let feed of publicacao">
+    <header class="posts__user-id" >
       <img src="assets/img/user-icon.png" class="posts__user-id-img" />
       <div class="post__user-id-test">
-        <span class="posts__user-id-title">Titulo do meu post</span>
+        <span class="posts__user-id-title">{{ feed.post_title }}</span>
         <div>
-          <small>Yasmin Lopes</small>
+          <small>{{ feed.user_owner.corporate_name }}</small>
         </div>
       </div>
     </header>
 
     <main class="posts__content">
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
+        {{ feed.post_description }}
       </p>
-      <img src="https://placeimg.com/540/250/tech" alt="" />
+      <img src="{{ feed.post_picture }}" alt="" />
       <br />
       <div class="posts__reactions">
         <button class="posts__reactions-btn">

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Feed } from '../../model/feed.model';
 
 @Component({
   selector: 'app-publish',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./publish.component.scss']
 })
 export class PublishComponent implements OnInit {
-  @Input() public publicacao: any;
+  @Input() public publicacao : any;
 
   constructor() { }
 
