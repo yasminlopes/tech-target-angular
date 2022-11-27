@@ -5,10 +5,31 @@
 
 <div class="container-main-chat">
     <div class="chat-choose">
+        <br>
+        <div class="head__search-container">
+            <div class="head__search-normal">
+              <input [(ngModel)]="searchText" type="search" class="search" placeholder="O que você procura?"
+              />
+              <i class="bx bx-search-alt-2 search-icon"></i>
+            </div>
+          </div>
+          <br>
+          <div class="chat-choose-list">
+            <img src="https://placeimg.com/30/30/people" alt="">
+            <span>Tech Target</span>
+          </div>
+          <div class="chat-choose-list">
+            <img src="https://placeimg.com/30/30/tech" alt="">
+            <span>Empresa Legal</span>
+          </div>
 
     </div>
     <div class="chat-msg">
-        <h3>Bruno Coorporação (Empresárial) </h3>
+        <div class="chat-user">
+        <img src="https://placeimg.com/30/30/people" alt="">
+        <span>Tech Target </span>
+    </div>
+   
 
         <div class="chat-container">
             <div class="conteudo-msg">
@@ -18,9 +39,9 @@
             </div>
             <div class="footer">
                 <div class="input-group">
-                    <input type="text" class="form-control" (keyup.enter)="sendMessage()" [formControl]="inputMsg" aria-label="Digite sua mensagem...">
+                    <input type="text" class="form-control input-msg" (keyup.enter)="sendMessage()" [formControl]="inputMsg" placeholder="Digite sua mensagem...">
                     <div class="input-group-append">
-                    <button class="btn btn-primary" type="button" (click)="sendMessage()">Enviar</button>
+                    <button class="btn btn-primary" type="button" (click)="sendMessage()"><i class='bx bx-send'></i></button>
                     </div>
                 </div>
             </div>

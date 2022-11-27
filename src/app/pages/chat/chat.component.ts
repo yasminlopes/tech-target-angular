@@ -7,6 +7,8 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  searchText: any;
+
 
   constructor() { }
 
@@ -19,19 +21,19 @@ export class ChatComponent implements OnInit {
     {
       to: 1,
       me: 2,
-      msg: "teste",
+      msg: "Olá",
       id: 1
     },
     {
       to: 2,
       me: 1,
-      msg: "nada testado",
+      msg: "Olá, irei testar",
       id: 1
     },
     {
       to: 2,
       me: 1,
-      msg: "dmr",
+      msg: "Teste",
       id: 1
     }
   ];

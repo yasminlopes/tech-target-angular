@@ -1,68 +1,172 @@
-.icon-ajust{
-    padding-right: 10px;
-    color: #1960cb;
+@import "/src/assets/styles/paletacores.scss";
+@import "/src/assets/styles/componentes.scss";
+@import "/src/assets/styles/tipografia.scss";
+
+.icon-ajust {
+  padding-right: 10px;
+  color: #1960cb;
 }
 
-.container-main-chat{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    height: calc(100vh - 200px);
-    gap: 20px;
+.container-main-chat {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: calc(100vh - 200px);
+  background: $cor-secundaria-01;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+  border: 1px solid $cor-cinza;
 }
 
-.chat-choose{
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ccc;
-    box-shadow: 1px 2px 3px #ccc;
+.chat-choose {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow-y: scroll;
+  &-list {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 10px;
+    background: $cor-branco;
+    color: $cor-cinza;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    &:hover {
+      background-color: #1960cb;
+      color: $cor-branco;
+
+    }
+    span {
+      font-size: 1rem;
+      font-weight: 500;
+      &:hover {
+        color: $cor-branco;
+      }
+    }
+    img {
+      width: 3rem;
+      border: 1px solid $cor-primaria-01;
+      border-radius: 400px;
+    }
+  }
 }
 
-.chat-msg{
-    width: 100%;
-    height: 100%;
+.chat-msg {
+  width: 100%;
+  height: 100%;
 }
 
-.chat-container{
-    width: 100%;
-    height: calc(100% - 100px);
+.chat-user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background: $cor-cinza;
+  border-radius: 10px 10px 0 0;
+  span {
+    color: $cor-secundaria-01;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  img {
+    width: 3rem;
+    border: 1px solid $cor-secundaria-01;
+    border-radius: 400px;
+  }
+}
+
+.chat-container {
+  width: 100%;
+  height: calc(100% - 100px);
+  background: $cor-branco;
+  border: 1px solid rgb(248, 248, 248);
 }
 
 .footer {
-    margin: auto;
-    width: 840px;
-    bottom: 17px;
-    position: fixed;
+  margin: auto;
+  width: 53.5rem;
+  bottom: 17px;
+  position: absolute;
 }
 
-.conteudo-msg{
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ccc;
-    box-shadow: 1px 2px 3px #ccc;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10px;
+.conteudo-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  height: 600px;
+  overflow-y: scroll;
 }
 
-.block-chat{
-    color: #444;
-    padding: 18px 20px;
-    line-height: 26px;
-    font-size: 16px;
-    border-radius: 7px;
-    display: inline-block;
-    position: relative
+.input-msg {
+  border: 1px solid #ccc;
+  box-shadow: $box-shadow;
+}
+.input-msg,
+.btn {
+  padding: 10px;
 }
 
-
-
-.me{
-    background: rgb(236, 235, 235);
-    align-self: flex-end;
-    
+.btn {
+  background-color: #1960cb;
+  border-radius: 0 10px 10px 0px;
+  width: 100px;
+  .bx {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
-.to{
-    background: #b7d3fd;
-    align-self: flex-start;    
+
+.block-chat {
+  color: #444;
+  padding: 18px 20px;
+  line-height: 26px;
+  font-size: 16px;
+  border-radius: 7px;
+  display: inline-block;
+  position: relative;
+}
+
+.me {
+  background: $cor-primaria-02;
+  color: $cor-branco;
+  align-self: flex-end;
+  border-radius: 10px 10px 0 10px;
+}
+.to {
+  background: $cor-cinza;
+  align-self: flex-start;
+  color: $cor-secundaria-02;
+  border-radius: 10px 10px 10px 0px;
+}
+// search
+.head__search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .head__search-normal {
+    margin-left: 10px;
+    // padding: 5px;
+    .search {
+      border: none;
+      width: 100%;
+      height: 2.375rem;
+      padding-left: 2.5rem;
+      padding-right: 1.25rem;
+      text-align: left;
+      border: 2px solid white;
+      box-shadow: $box-shadow;
+      border-radius: 5px;
+      outline: 0;
+    }
+
+    .search-icon {
+      position: absolute;
+      font-size: 1.3rem;
+      line-height: 2.375rem;
+      left: 2rem;
+      top: 0;
+      color: $cor-secundaria-01;
+    }
+  }
 }
