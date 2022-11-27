@@ -64,7 +64,8 @@ export class RegisterUserComponent implements OnInit {
       profession: ['', [ Validators.required ]],
       user_email: ['', [ Validators.required, Validators.email ]],
       user_phone: ['', [ Validators.required ]],
-      user_password: ['', [ Validators.required ]]
+      user_password: ['', [ Validators.required ]],
+      user_photo: null
     })
   }
 
@@ -75,7 +76,6 @@ export class RegisterUserComponent implements OnInit {
     
     const type =  this.registerUserForm.get('tipoPessoa')?.value == 'fisica' ? 'cpf' : 'cnpj';
     
-    console.log(this.registerUserForm.value);
     this.http.post<any>(`${environment.api}/users/commonUsers/?user_type=${type}`, {
       
       user_name: this.registerUserForm.get('name')?.value + ' ' + this.registerUserForm.get('last_name')?.value,
