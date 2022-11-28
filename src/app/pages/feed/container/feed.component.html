@@ -41,7 +41,7 @@
         />
       </div>
       <div class="post-actions__widget">
-        <button class="btn post-actions__publish" (click)="createPost()">Publicar</button>
+        <button class="btn post-actions__publish" [ngClass]="feedForm.invalid ? 'disabled-button' : ''" (click)="createPost()">Publicar</button>
       </div>
     </div>
   </div>

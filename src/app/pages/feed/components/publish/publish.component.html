@@ -5,7 +5,8 @@
       <div class="post__user-id-test">
         <span class="posts__user-id-title">{{ feed.post_title }}</span>
         <div>
-          <small>{{ feed.user_owner.corporate_name }}</small>
+          <span>{{ feed.user_owner.corporate_name }} | </span>
+          <small>{{ feed.post_date | date : 'dd MMM yyyy' }}</small>
         </div>
       </div>
     </header>
