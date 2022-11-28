@@ -26,6 +26,7 @@ import { FormErroComponent } from '../shared/components/form-erro/form-erro.comp
 import { PublishComponent } from './feed/components/publish/publish.component';
 import { FeedComponent } from './feed/container/feed.component';
 import { CdkMenuModule } from '@angular/cdk/menu';
+import { NgxPaginationModule } from 'ngx-pagination';
 // import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -62,7 +63,9 @@ import { CdkMenuModule } from '@angular/cdk/menu';
         BsDatepickerModule,
         AccordionModule,
         Ng2SearchPipeModule,
-        CdkMenuModule
+        CdkMenuModule,
+        NgxPaginationModule,
+
     ],
 })
 export class PagesModule { }

@@ -1,11 +1,11 @@
-<div class="my-4">
+<div class="my-4" *ngIf="idUserCnpj">
   <h4>
     <!-- <i class="bx bxs-edit"></i> -->
     Criar Publicação
   </h4>
-</div>
+
 <!-- PUBLICAR -->
-<form class="widget-post" [formGroup]="feedForm">
+<form  class="widget-post" [formGroup]="feedForm">
   <div class="widget-post__header">
     <input
       type="text"
@@ -46,6 +46,7 @@
     </div>
   </div>
 </form>
+</div>
 
 <br />
 <div class="my-4">
@@ -53,4 +54,4 @@
 </div>
 <br />
 <!-- Publicações -->
-<app-publish  [publicacao]="publicacao$ | async" ></app-publish>
+<app-publish  [isCompany]="idUserCnpj"(onReaction)="reactions($event)" [publicacao]="publicacao$ | async" ></app-publish>

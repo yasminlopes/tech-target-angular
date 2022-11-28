@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Feed } from '../../model/feed.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-publish',
@@ -8,6 +7,9 @@ import { Feed } from '../../model/feed.model';
 })
 export class PublishComponent implements OnInit {
   @Input() public publicacao : any;
+  @Input() public isCompany : any;
+  @Output() onReaction = new EventEmitter();
+  p: number = 1;
 
   constructor() { }
 

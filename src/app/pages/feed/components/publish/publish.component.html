@@ -1,5 +1,5 @@
 <div class="posts">
-  <article *ngFor="let feed of publicacao">
+  <article *ngFor="let feed of publicacao | paginate: { itemsPerPage: 5, currentPage: p }">
     <header class="posts__user-id" >
       <img src="assets/img/user-icon.png" class="posts__user-id-img" />
       <div class="post__user-id-test">
@@ -16,9 +16,13 @@
       </p>
       <img src="{{ feed.post_picture }}" alt="" />
       <br />
-      <div class="posts__reactions">
-        <button class="posts__reactions-btn">
-          <i class="bx bx-like" title="Curtir"> </i>
+      <div *ngIf="!isCompany" class="posts__reactions">
+        <button [ngClass]="{ 'like': feed.id_reaction == 2 }" 
+        class="posts__reactions-btn" (click)="onReaction.emit(feed)">
+          <i class="bx" [ngClass]="{ 
+            'bxs-like': feed.id_reaction == 2, 
+            'bx-like': !feed.id_reaction ||feed.id_reaction == 1  
+          }" title="Curtir"> </i>
           Curtir
         </button>
         <button class="posts__reactions-btn">
@@ -32,5 +36,11 @@
       </div>
     </main>
   </article>
+  <div class="listagem__vazia" *ngIf="!publicacao">Nada a ser mostrado</div>
+
+  <br />
+  <!-- Pagination -->
+  <pagination-controls (pageChange)="p = $event"
+  class="my-pagination"></pagination-controls>
 </div>
 <br />

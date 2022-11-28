@@ -75,14 +75,43 @@ p, small{
     width: fit-content;
     height: 40px;
     background: transparent;
-    color: $cor-primaria-02;
+    color: rgba(53, 53, 53, 0.933);
     border-radius: 5px;
     font-size: 1.2rem;
     &:hover{
       font-size: 1.3rem;
-      background: $cor-primaria-02;
-      color: white;
+     
     }
   }
   }
+// Estilo do btn ao dar like 
+  .like {
+    color: $cor-primaria-02;
+    animation: like-animation 0.1s;
+  }
+}
+
+
+@keyframes like-animation {
+  0%   { transform: scale(1); }
+  90%   { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+// Sem dados na listagem
+.listagem__vazia {
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+  justify-content: flex-start;
+}
+
+// Pagination
+pagination-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: $cor-primaria-05;
 }
